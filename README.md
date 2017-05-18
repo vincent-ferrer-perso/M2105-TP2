@@ -17,9 +17,14 @@ JavaFX 8.0 est tellement riche que sa [documentation](https://docs.oracle.com/ja
 [Java 8](https://docs.oracle.com/javase/8/docs/api/index.html?overview-summary.html) (qui inclut celle de ses prédécesseurs AWT et Swing), bien qu'il fasse partie intégrante de Java 8.
 
 Ce TP est l'occasion d'un premier contact avec cet environnement.
-Commençons par le plus simple programme permettant d'afficher une fenêtre JavaFX.
+
+Avant de commencer, ... clonez le dépot du TP2 .... ouvrez le projet GitHub dans IntelliJ...
 
 ### Première application : les classes Application et Stage
+
+Commençons par le plus simple programme permettant d'afficher une fenêtre JavaFX.
+
+#### Exercice 1
 
 Ouvrez le fichier `MyFirstJavaFXWindow.java` du paquet `exercice1` et exécutez-le.
 Une fenêtre devrait s'afficher avec le titre "*A Useless JavaFX Window*".
@@ -53,16 +58,16 @@ des deux classes indispensables à cet affichage : `javafx.application.Applicati
 
 Ainsi que la déclaration de notre classe `MyFirstJavaFXWindow` le montre, toute application JavaFX doit être une sous-classe de `Application`.
 Dans un navigateur, ouvrez la documentation sur la classe ``Application``. 
-On observe que cette classe est **abstraite**, ce qui signifie que notre classe concrête ``MyFirstJavaFXWindow`` qui l'étend doit implémenter 
+On observe que cette classe est **abstraite**, ce qui signifie que notre classe **concrête** ``MyFirstJavaFXWindow`` qui l'étend doit implémenter (redéfinir)
 les méthodes abstraites de sa classe parente ``Application``.
 
 Dans la partie *Method Summary* de la documentation, on remarque que la seule méthode abstraite d'``Application`` est la méthode ``start()``. 
-C'est donc la seule méthode que notre classe doit forcément implémenter (redéfinir).
+C'est donc la seule méthode que notre classe doit forcément implémenter.
 
 Avant de s'intéresser à son contenu, nous pouvons observer que notre classe ``MyFirstJavaFXWindow`` est une classe exécutable car elle définit la méthode ``main()``.
 Celle-ci se contente d'appeler la méthode ``launch()`` qui est une méthode **statique** de la classe ``Application``, dont le rôle est de créer une instance de notre ``Application`` et de la démarrer, 
 en lui communiquant les arguments de la ligne de commande.
-Nous étudierons plus en détail les étapes de démarrage d'une telle application dans l'exercice suivant.
+Nous étudierons plus en détail le cycle de vie d'une telle application dans un exercice ultérieur.
 
 Revenons à notre méthode ``start()`` qui prend en paramètre une instance de la classe ``Stage``, créée par JavaFX dans ``launch()``, 
 et qui représente la fenêtre principale de notre application (qui pourra en créer d'autres si besoin).
@@ -71,42 +76,67 @@ Nous nous sommes contentés d'en définir le titre avec la méthode ``setTitle()
 
 Ouvrez la documentation sur la classe ``Stage``. 
 Remarquez que cette classe étend la classe ``Window`` qui est un peu plus générale car définit les bases de toute fenêtre de premier niveau, ce qui comprend aussi les *popups*.
-La classe ``Stage`` dispose de nombreuses méthodes (ou redéfinitions) qui lui sont propres et indiquées dans la partie *Method Summary* de la documentation, 
-ainsi que des méthodes héritées (et non redéfinies) de sa super-classe ``Window`` (et par transitivité de la super-classe ``Object``) indiquées dans les parties *Methods inherited from ...*.
+La classe ``Stage`` dispose de nombreuses méthodes (ou redéfinitions) qui lui sont propres et indiquées dans la partie *Method Summary* de sa documentation, 
+ainsi que des méthodes héritées (et non redéfinies) de sa super-classe ``Window`` (et, par transitivité, de la super-classe ``Object``) indiquées dans les parties *Methods inherited from ...*.
 
-#### Exercice
+#### Exercice 2
 
-Modifiez le code de l'application précédente de manière à ce que la fenêtre :
-* soit toujours placée au premier plan et ne soit pas redimensionnable (cherchez dans les méthodes de Stage) ;
-* ait une largeur de 800 pixels et une hauteur de 400 pixels (cherchez dans les méthodes de Window).
+Sur le panneau de gauche d'IntelliJ, sélectionnez le paquet ``exercice1`` et copiez-collez-le en nommant le nouveau paquet ``exercice2`` et en nommant ``MySecondJavaFxWindow`` la classe ainsi copiée.
+Dans la méthode ``start()`` de cette nouvelle classe, modifiez le titre de la fenêtre en "*Second Useless JavaFX Window*" puis 
+ajoutez des instructions avant l'appel de ``show()`` de manière à ce que la fenêtre :
+* soit toujours placée au premier plan et ne soit pas redimensionnable (cherchez dans les méthodes de ``Stage``),
+* ait une largeur fixée à 800 pixels et une hauteur fixée à 400 pixels (cherchez dans les méthodes de ``Window``).
 
-Exécutez l'application pour vérifier vos modifications, sans oublier d'exécuter les tests correspondants.
+Exécutez l'application pour vérifier les conséquences de vos modifications, sans oublier d'exécuter les tests correspondants.
 
-#### Exercice
+#### Exercice 3
 
 Modifiez à nouveau le code de l'application de manière à changer le style de la fenêtre pour qu'elle ne soit pas décorée.
 Exécutez l'application ainsi que le test correspondant pour vérifier.
 
+Puisqu'elle n'est plus décorée, la fenêtre qui s'affiche ne dispose plus du bouton permettant de terminer l'application !
+Néanmoins, sur un bureau comme le vôtre qui dispose d'une barre de tâches, un simple clic droit sur l'icône correspondante nous donne accès à un menu contextuel permettant de la fermer.
+Un autre moyen à votre disposition est de cliquer sur le carré rouge de la partie *Run:* en bas à gauche de la fenêtre IntelliJ, aussi présent en haut à droite.
+
 
 ### Cycle de vie d'une application
 
-Puisqu'elle n'est plus décorée, la fenêtre précédente ne dispose plus du bouton permettant de terminer l'application.
-Le seul moyen à votre disposition est de cliquer sur le carré rouge de la partie *Run:* en bas à gauche de la fenêtre IntelliJ.
-
-Il est temps d'aborder le cycle de vie d'une application JavaFX, déjà présenté en cours magistral, et figurant dans la 
-documentation de la classe ``Application``.
-Pour rappel, la méthode statique ``launch()`` :
+Étudions rapidement le cycle de vie d'une application JavaFX (déjà présenté en cours magistral, et figurant dans la 
+documentation de la classe ``Application``).
+Pour rappel, la méthode statique ``launch()`` effectue dans l'ordre les opérations suivantes :
   1. crée une instance de notre sous-classe d'``Application``,
   2. appelle sa méthode ``init()`` qui, comme son nom l'indique, permet de procéder à d'éventuelles initialisations,
   3. appelle sa méthode ``start()`` en lui fournissant une instance de ``Stage``,
-  4. attend que l'application se termine, soit parce que l'application a appelé la méthode statique ``Platform.exit()``, soit parce que la dernière fenêtre a été fermée et que l'attribut ``implicitExit`` de ``Platform`` est fixé à ``true`` (qui est sa valeur par défaut),
+  4. attend que l'application se termine, soit parce que l'application a appelé la méthode statique ``Platform.exit()``, soit parce que sa dernière fenêtre a été fermée et que l'attribut ``implicitExit`` de ``Platform`` est fixé à ``true`` (qui est sa valeur par défaut),
   5. puis appelle sa méthode ``stop()``.
 
+Nous avons vu précédemment que seule la méthode ``start()`` nécessite d'être implémentée car elle est abstraite.
+Les méthodes ``init()`` et ``stop()`` sont déjà définies (vides) dans la classe ``Application``, mais peuvent être redéfinies dans notre sous-classe d'``Application`` si besoin. 
+
+Afin d'étudier le cycle de vie d'une application, vous allez tracer les différents appels en affichant des messages sur la *console*.
+Pour cela, vous utiliserez la méthode ``System.out.println()`` qui prend en paramètre un ``String`` contenant le message à afficher.
+En effet, pour les entrées-sorties sur un terminal (ou console), la classe ``System`` fournit 3 données membres statiques ``in``, ``out`` et ``err`` 
+qui représentent respectivement les flux de l'entrée standard, de la sortie standard et de la sortie d'erreur (comme le font les flux ``cin``, ``cout`` et ``cerr`` du C++).
+Sans (trop) rentrer dans les détails, ``System.out`` est une instance de la classe ``java.io.PrintStream`` qui fournit de nombreuses méthodes d'écriture dans un flux parmi lesquelles plusieurs déclinaisons de la méthode ``println()`` dont celle prenant un ``String`` en paramètre.
+
+#### Exercice 4
+
+Copiez le paquet exercice3 en exercice4 et nommez la nouvelle classe ApplicationLifeCycle, puis :
+* ajoutez un constructeur sans paramètre à cette classe, se contentant d'afficher le message "*constructeur ApplicationLifeCycle()*"
+* dans ``start()`` :
+  - supprimez l'appel de la méthode ``initStyle()`` afin de laisser la décoration de la fenêtre
+  - ajoutez l'affichage des messages "*start() : avant show stage*" et "*start() : après show stage*", respectivement avant et après l'appel de ``primaryStage.show()``
+* redéfinissez la méthode ``init()`` de la classe ``Application``, en se contenant d'afficher le message "*init()*"
+* redéfinissez la méthode ``stop()`` de la classe ``Application``, en se contenant d'afficher le message "*stop()*" 
+* dans ``main()``, ajoutez l'affichage des messages "*main() : avant launch*" et "*main() : après launch*", respectivement avant et après l'appel de ``launch()``
+
+Puis exécutez (et testez) cette classe, sans en fermer la fenêtre.
+Remarquez que l'affichage s'arrête à celui **après** le ``show()`` qui a rendu visible la fenêtre.
+À ce stade, la méthode ``start()`` est terminée.
+Java (FX) attend désormais que la fenêtre de l'application soit fermée.
+
+Fermez la fenêtre et observez que la méthode ``stop()`` est alors appelée, ce qui met fin à notre application, 
+puis que les insctructions suivant le ``launch()`` de la méthode ``main()`` sont exécutées ensuite.
 
 
 
-
-
-
-
-Premier contact avec JavaFx (Stage, scène, événements... )
