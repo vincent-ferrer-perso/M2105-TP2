@@ -139,4 +139,26 @@ Fermez la fenêtre et observez que la méthode ``stop()`` est alors appelée, ce
 puis que les insctructions suivant le ``launch()`` de la méthode ``main()`` sont exécutées ensuite.
 
 
+### Qui fait quoi ?
+
+Pour terminer l'étude du cycle de vie, intéressons-nous aux "organes" de Java qui animent (exécutent) notre application.
+Pour réaliser certaines tâches, la JVM utilise des *threads*, qui sont des fils d'exécution distincts d'un même processus.
+En général, un *processus* (ou l'un de ses threads) crée des thread pour réaliser des tâches annexes tout en continuant sa propre tâche. 
+Bien que réducteur, retenons simplement que les thread s'exécutent en parallèle, peuvent se synchroniser, 
+et partagent ensemble la mémoire du processus et ont donc accès aux mêmes objets de l'application.
+
+#### Exercice 5
+
+Copiez-collez à nouveau le paquet précédent en ``exercice5`` et nommez sa classe ``WhoIsWho``, puis :
+1. ouvrez la documentation de la classe ``Thread`` de Java8, qui est la super classe des threads de la JVM, et recherchez-y :
+
+* la méthode statique qui renvoie le Thread courant,
+* la méthode d'instance qui renvoie un String contenant le nom du thread (oui, ils ont un petit nom)
+
+2. préfixez chaque affichage de l'application par la chaîne ``[``*nom*``]`` suivi d'un espace,  
+ où *nom* est le nom du thread courant (celui qui fait appel au ``println``).
+  
+Éxécutez ensuite l'application pour vérifier quels threads interviennent dans cette si simple application.
+
+
 
