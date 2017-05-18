@@ -1,13 +1,11 @@
 package fr.univ_amu.iut;
 
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.junit.Test;
 import org.testfx.framework.junit.ApplicationTest;
 
-import static org.junit.Assert.assertTrue;
 import static org.testfx.api.FxAssert.verifyThat;
-import static org.testfx.service.query.impl.NodeQueryUtils.hasText;
+import static org.testfx.util.NodeQueryUtils.hasText;
 
 public class AppTest extends ApplicationTest
 {
@@ -40,7 +38,6 @@ public class AppTest extends ApplicationTest
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        primaryStage.setScene(new Scene(new App.AppPane(), 200, 100));
-        primaryStage.show();
+        new App().start(primaryStage);
     }
 }
