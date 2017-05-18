@@ -13,7 +13,6 @@ import static org.junit.Assert.fail;
 
 public class TestMyFirstJavaFXWindow extends ApplicationTest {
 
-
     @Test
     public void should_initialize_stage_with_height_200() {
         try {
