@@ -122,63 +122,82 @@ rouge de la partie *Run:* en bas à gauche de la fenêtre IntelliJ, aussi prése
 ### Cycle de vie d'une application
 
 Étudions rapidement le cycle de vie d'une application JavaFX (déjà présenté en cours magistral, et figurant dans la 
-documentation de la classe ``Application``).
-Pour rappel, la méthode statique ``launch()`` effectue dans l'ordre les opérations suivantes :
-  1. crée une instance de notre sous-classe d'``Application``,
-  2. appelle sa méthode ``init()`` qui, comme son nom l'indique, permet de procéder à d'éventuelles initialisations,
-  3. appelle sa méthode ``start()`` en lui fournissant une instance de ``Stage``,
-  4. attend que l'application se termine, soit parce que l'application a appelé la méthode statique ``Platform.exit()``, soit parce que sa dernière fenêtre a été fermée et que l'attribut ``implicitExit`` de ``Platform`` est fixé à ``true`` (qui est sa valeur par défaut),
-  5. puis appelle sa méthode ``stop()``.
+documentation de la classe `Application`).
 
-Nous avons vu précédemment que seule la méthode ``start()`` nécessite d'être implémentée car elle est abstraite.
-Les méthodes ``init()`` et ``stop()`` sont déjà définies (vides) dans la classe ``Application``, mais peuvent être redéfinies dans notre sous-classe d'``Application`` si besoin. 
+Pour rappel, la méthode statique `launch()` effectue dans l'ordre les opérations suivantes :
+  1. crée une instance de notre sous-classe d'`Application`,
 
-Afin d'étudier le cycle de vie d'une application, vous allez tracer les différents appels en affichant des messages sur la *console*.
-Pour cela, vous utiliserez la méthode ``System.out.println()`` qui prend en paramètre un ``String`` contenant le message à afficher.
-En effet, pour les entrées-sorties sur un terminal (ou console), la classe ``System`` fournit 3 données membres statiques ``in``, ``out`` et ``err`` 
-qui représentent respectivement les flux de l'entrée standard, de la sortie standard et de la sortie d'erreur (comme le font les flux ``cin``, ``cout`` et ``cerr`` du C++).
-Sans (trop) rentrer dans les détails, ``System.out`` est une instance de la classe ``java.io.PrintStream`` qui fournit de nombreuses méthodes d'écriture dans un flux parmi lesquelles plusieurs déclinaisons de la méthode ``println()`` dont celle prenant un ``String`` en paramètre.
+  2. appelle sa méthode `init()` qui, comme son nom l'indique, permet de procéder à d'éventuelles initialisations,
+
+  3. appelle sa méthode `start()` en lui fournissant une instance de `Stage`,
+
+  4. attend que l'application se termine, soit parce que l'application a appelé la méthode statique `Platform.exit()`, 
+  soit parce que sa dernière fenêtre a été fermée et que l'attribut `implicitExit` de ``Platform`` est fixé à `true` (qui 
+  est sa valeur par défaut),
+
+  5. puis appelle sa méthode `stop()`.
+
+Seule la méthode `start()` nécessite d'être implémentée car elle est abstraite. Les méthodes `init()` et `stop()` sont 
+déjà définies (vides) dans la classe `Application`, mais peuvent être redéfinies dans notre sous-classe d'`Application` 
+si besoin. 
+
+Afin d'étudier le cycle de vie d'une application, vous allez tracer les différents appels en affichant des messages sur 
+la *console*. Pour cela, vous utiliserez la méthode ``System.out.println()`` qui prend en paramètre un ``String`` 
+contenant le message à afficher. Pour les entrées-sorties sur un terminal (ou console), la classe ``System`` 
+fournit 3 données membres statiques ``in``, ``out`` et ``err`` qui représentent respectivement les flux de l'entrée 
+standard, de la sortie standard et de la sortie d'erreur (comme le font les flux ``cin``, ``cout`` et ``cerr`` du C++).
+Sans (trop) rentrer dans les détails, ``System.out`` est une instance de la classe ``java.io.PrintStream`` qui fournit 
+de nombreuses méthodes d'écriture dans un flux parmi lesquelles plusieurs déclinaisons de la méthode ``println()`` dont 
+celle prenant un ``String`` en paramètre.
 
 #### Exercice 4
 
-Copiez le paquet exercice3 en exercice4 et nommez la nouvelle classe ApplicationLifeCycle, puis :
+Allez dans le paquetage `exercice4` et ouvrir la classe `ApplicationLifeCycle`, puis :
 * ajoutez un constructeur sans paramètre à cette classe, se contentant d'afficher le message "*constructeur ApplicationLifeCycle()*"
-* dans ``start()`` :
-  - supprimez l'appel de la méthode ``initStyle()`` afin de laisser la décoration de la fenêtre
-  - ajoutez l'affichage des messages "*start() : avant show stage*" et "*start() : après show stage*", respectivement avant et après l'appel de ``primaryStage.show()``
-* redéfinissez la méthode ``init()`` de la classe ``Application``, en se contenant d'afficher le message "*init()*"
-* redéfinissez la méthode ``stop()`` de la classe ``Application``, en se contenant d'afficher le message "*stop()*" 
-* dans ``main()``, ajoutez l'affichage des messages "*main() : avant launch*" et "*main() : après launch*", respectivement avant et après l'appel de ``launch()``
+
+* dans `start()` :
+  - ajoutez l'affichage le message "*start()*"
+
+* redéfinissez la méthode `init()` de la classe `Application`, en se contenant d'afficher le message "*init()*"
+
+* redéfinissez la méthode `stop()` de la classe `Application`, en se contenant d'afficher le message "*stop()*" 
+
+* dans `main()`, ajoutez l'affichage des messages "*main() : avant launch*" et "*main() : après launch*", respectivement 
+avant et après l'appel de `launch()`
 
 Puis exécutez (et testez) cette classe, sans en fermer la fenêtre.
-Remarquez que l'affichage s'arrête à celui **après** le ``show()`` qui a rendu visible la fenêtre.
-À ce stade, la méthode ``start()`` est terminée.
-Java (FX) attend désormais que la fenêtre de l'application soit fermée.
+
+Remarquez que l'affichage s'arrête à celui **après** le ``show()`` qui a rendu visible la fenêtre. À ce stade, la 
+méthode ``start()`` est terminée. Java (FX) attend désormais que la fenêtre de l'application soit fermée.
 
 Fermez la fenêtre et observez que la méthode ``stop()`` est alors appelée, ce qui met fin à notre application, 
-puis que les insctructions suivant le ``launch()`` de la méthode ``main()`` sont exécutées ensuite.
+puis que les instructions suivant le `launch()` de la méthode `main()` sont exécutées ensuite.
 
 
 ### Qui fait quoi ?
 
 Pour terminer l'étude du cycle de vie, intéressons-nous aux "organes" de Java qui animent (exécutent) notre application.
 Pour réaliser certaines tâches, la JVM utilise des *threads*, qui sont des fils d'exécution distincts d'un même processus.
-En général, un *processus* (ou l'un de ses threads) crée des thread pour réaliser des tâches annexes tout en continuant sa propre tâche. 
-Bien que réducteur, retenons simplement que les thread s'exécutent en parallèle, peuvent se synchroniser, 
-et partagent ensemble la mémoire du processus et ont donc accès aux mêmes objets de l'application.
+En général, un *processus* (ou l'un de ses threads) crée des thread pour réaliser des tâches annexes tout en continuant 
+ses propres tâches. Bien que réducteur, retenons simplement que les thread s'exécutent en parallèle, peuvent se 
+synchroniser, et partagent ensemble la mémoire du processus et ont donc accès aux mêmes objets de l'application.
 
 #### Exercice 5
 
-Copiez-collez à nouveau le paquet précédent en ``exercice5`` et nommez sa classe ``WhoIsWho``, puis :
+Ouvrez la classe ``WhoIsWho``, puis :
 1. ouvrez la documentation de la classe ``Thread`` de Java8, qui est la super classe des threads de la JVM, et recherchez-y :
 
 * la méthode statique qui renvoie le Thread courant,
+
 * la méthode d'instance qui renvoie un String contenant le nom du thread (oui, ils ont un petit nom)
 
-2. préfixez chaque affichage de l'application par la chaîne ``[``*nom*``]`` suivi d'un espace,  
- où *nom* est le nom du thread courant (celui qui fait appel au ``println``).
+2. Faite en sorte que chaque méthode du cycle de vie ait un affichage identique à celui de l'exercice 4. 
+
+2. préfixez chaque affichage de l'application par la chaîne ``[``*nom*``]`` suivi d'un espace, où *nom* est le nom du 
+thread courant (celui qui fait appel au ``println``).
   
-Éxécutez ensuite l'application pour vérifier quels threads interviennent dans cette si simple application.
+Éxécutez ensuite l'application pour vérifier quels threads interviennent à quel étape du cycle de vie de cette si 
+simple application.
 
 
 
