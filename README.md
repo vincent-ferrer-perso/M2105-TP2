@@ -106,17 +106,18 @@ ajoutez les instructions pour  que votre fenêtre respecte les contraintes suiva
 
 Terminez par l'ajout d'un appel à la méthode `show()` pour afficher la fenêtre.
 
-Exécutez l'application pour vérifier les conséquences de vos modifications, sans oublier d'exécuter les tests correspondants.
+Exécutez l'application pour vérifier les conséquences de vos modifications. Comme pour l'exercice précédent, vous devez 
+activer les tests les un après les autres et soumettre votre solution après chaque itération du cycle principal du workflow.
 
 #### Exercice 3
 
-Modifiez à nouveau le code de l'application de manière à changer le style de la fenêtre pour qu'elle ne soit pas décorée.
-Exécutez l'application ainsi que le test correspondant pour vérifier.
+Modifiez le code de l'application qui vous est donné de manière à changer le style de la fenêtre pour qu'elle ne soit 
+pas décorée. Ajoutez les propriétés que les test vous imposent pour être totalement validées.
 
 Puisqu'elle n'est plus décorée, la fenêtre qui s'affiche ne dispose plus du bouton permettant de terminer l'application !
-Néanmoins, sur un bureau comme le vôtre qui dispose d'une barre de tâches, un simple clic droit sur l'icône correspondante nous donne accès à un menu contextuel permettant de la fermer.
-Un autre moyen à votre disposition est de cliquer sur le carré rouge de la partie *Run:* en bas à gauche de la fenêtre IntelliJ, aussi présent en haut à droite.
-
+Néanmoins, sur un bureau comme le vôtre qui dispose d'une barre de tâches, un simple clic droit sur l'icône 
+correspondante nous donne accès à un menu contextuel permettant de la fermer. Un autre moyen est de cliquer sur le carré 
+rouge de la partie *Run:* en bas à gauche de la fenêtre IntelliJ, aussi présent en haut à droite.
 
 ### Cycle de vie d'une application
 
