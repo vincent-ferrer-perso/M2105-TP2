@@ -98,12 +98,13 @@ Pour valider cet exercice, supprimez l'annotation @Ignore dans la classe `TestMy
 pour vérifier que tout est correct.
 
 #### Exercice 2
+Pour commencer cet exercice, ouvrez la classe `MySecondJavaFxWindow` du paquetage `exercice2`. Dans la méthode `start()` 
+de cette classe, modifiez le titre de la fenêtre en "*Second Useless JavaFX Window*" puis 
+ajoutez les instructions pour  que votre fenêtre respecte les contraintes suivantes :
+* Être toujours placée au premier plan et ne pas être redimensionnable (cherchez dans la documentation des méthodes de ``Stage``),
+* Avoir une largeur fixée à 800 pixels et une hauteur fixée à 400 pixels (cherchez dans les méthodes de ``Window``).
 
-Sur le panneau de gauche d'IntelliJ, sélectionnez le paquet ``exercice1`` et copiez-collez-le en nommant le nouveau paquet ``exercice2`` et en nommant ``MySecondJavaFxWindow`` la classe ainsi copiée.
-Dans la méthode ``start()`` de cette nouvelle classe, modifiez le titre de la fenêtre en "*Second Useless JavaFX Window*" puis 
-ajoutez des instructions avant l'appel de ``show()`` de manière à ce que la fenêtre :
-* soit toujours placée au premier plan et ne soit pas redimensionnable (cherchez dans les méthodes de ``Stage``),
-* ait une largeur fixée à 800 pixels et une hauteur fixée à 400 pixels (cherchez dans les méthodes de ``Window``).
+Terminez par l'ajout d'un appel à la méthode `show()` pour afficher la fenêtre.
 
 Exécutez l'application pour vérifier les conséquences de vos modifications, sans oublier d'exécuter les tests correspondants.
 
