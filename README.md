@@ -18,7 +18,17 @@ JavaFX 8.0 est tellement riche que sa [documentation](https://docs.oracle.com/ja
 
 Ce TP est l'occasion d'un premier contact avec cet environnement.
 
-Avant de commencer, ... clonez le dépot du TP2 .... ouvrez le projet GitHub dans IntelliJ...
+#### Création de votre fork du TP
+
+La première chose que vous allez faire est de créer un fork d'un dépôt. Pour ce faire, rendez-vous sur le lien suivant : 
+
+[https://classroom.github.com/assignment-invitations/3caf02cc2527d1e1f8ea209cccbbe0ee](https://classroom.github.com/assignment-invitations/3caf02cc2527d1e1f8ea209cccbbe0ee) 
+
+Comme pour le TP1, GitHub va vous créer un dépôt contenant un fork du dépôt 'IUTInfoAix-m2105/tp2' et s'appellant 'IUTInfoAix-m2105/tp2-votreUsername'. 
+Vous apparaîtrez automatiquement comme contributeur de ce projet pour y pousser votre travail.
+
+Une fois votre fork créé, il vous suffit de l'importer dans IntelliJ.
+
 
 ### Première application : les classes Application et Stage
 
@@ -26,12 +36,11 @@ Commençons par le plus simple programme permettant d'afficher une fenêtre Java
 
 #### Exercice 1
 
-Ouvrez le fichier `MyFirstJavaFXWindow.java` du paquet `exercice1` et exécutez-le.
-Une fenêtre devrait s'afficher avec le titre "*A Useless JavaFX Window*".
-Elle porte bien son nom car, en effet, cette fenêtre ne sert pas à grand chose...
+Ouvrez le fichier `MyFirstJavaFXWindow.java` du paquet `exercice1` et exécutez-le. Une fenêtre devrait s'afficher avec 
+le titre "*A Useless JavaFX Window*". Elle porte bien son nom car, en effet, cette fenêtre ne sert pas à grand chose...
 Néanmoins, elle peut être minimisée, agrandie, déplacée, fermée etc. comme n'importe quelle fenêtre de votre bureau !
 
-Le code de cette application graphique devrait contenir :
+Le code de cette application graphique est le suivant :
 
 ```java
 package fr.univ_amu.iut.exercice1;
@@ -53,31 +62,40 @@ public class MyFirstJavaFXWindow extends Application {
 }
 ```
 
-Les deux premiers imports sont nécessaires pour utiliser les noms courts 
-des deux classes indispensables à cet affichage : `javafx.application.Application` et `javafx.stage.Stage`.
+Les deux premiers imports sont nécessaires pour utiliser les noms courts des deux classes indispensables à cet 
+affichage : `javafx.application.Application` et `javafx.stage.Stage`.
 
-Ainsi que la déclaration de notre classe `MyFirstJavaFXWindow` le montre, toute application JavaFX doit être une sous-classe de `Application`.
-Dans un navigateur, ouvrez la documentation sur la classe ``Application``. 
-On observe que cette classe est **abstraite**, ce qui signifie que notre classe **concrête** ``MyFirstJavaFXWindow`` qui l'étend doit implémenter (redéfinir)
-les méthodes abstraites de sa classe parente ``Application``.
+Ainsi que la déclaration de notre classe `MyFirstJavaFXWindow` le montre, toute application JavaFX doit être une 
+sous-classe de `Application`.
 
-Dans la partie *Method Summary* de la documentation, on remarque que la seule méthode abstraite d'``Application`` est la méthode ``start()``. 
-C'est donc la seule méthode que notre classe doit forcément implémenter.
+Dans un navigateur, ouvrez la documentation sur la classe `Application`. On observe que cette classe est **abstraite**, 
+ce qui signifie que notre classe **concrête** `MyFirstJavaFXWindow` qui l'étend doit implémenter (redéfinir) les méthodes 
+abstraites de sa classe parente `Application`.
 
-Avant de s'intéresser à son contenu, nous pouvons observer que notre classe ``MyFirstJavaFXWindow`` est une classe exécutable car elle définit la méthode ``main()``.
-Celle-ci se contente d'appeler la méthode ``launch()`` qui est une méthode **statique** de la classe ``Application``, dont le rôle est de créer une instance de notre ``Application`` et de la démarrer, 
-en lui communiquant les arguments de la ligne de commande.
-Nous étudierons plus en détail le cycle de vie d'une telle application dans un exercice ultérieur.
+Dans la partie *Method Summary* de la documentation, on remarque que la seule méthode abstraite d'`Application` est la 
+méthode `start()`.  C'est la seule méthode que notre classe doit forcément implémenter pour devenir concrète (et donc 
+être instanciable).
 
-Revenons à notre méthode ``start()`` qui prend en paramètre une instance de la classe ``Stage``, créée par JavaFX dans ``launch()``, 
+Avant de s'intéresser à son contenu, observons que la classe `MyFirstJavaFXWindow` est une classe 
+exécutable car elle définit la méthode `main()`. Celle-ci se contente d'appeler la méthode `launch()` qui est une 
+méthode **statique** de la classe `Application`. Le rôle de cette méthode est de créer une instance de notre 
+`Application` et de la démarrer, en lui communiquant les arguments de la ligne de commande.
+
+La méthode `start()` prend en paramètre une instance de la classe `Stage` qui est créée par JavaFX dans `launch()`, 
 et qui représente la fenêtre principale de notre application (qui pourra en créer d'autres si besoin).
-Dans notre application, cette fenêtre est vide.
-Nous nous sommes contentés d'en définir le titre avec la méthode ``setTitle()`` puis de demander son affichage avec la méthode ``show()``.
+Dans notre application, cette fenêtre est vide. Nous nous sommes contentés d'en définir le titre avec la méthode 
+`setTitle()` puis de demander son affichage avec la méthode `show()`.
 
-Ouvrez la documentation sur la classe ``Stage``. 
-Remarquez que cette classe étend la classe ``Window`` qui est un peu plus générale car définit les bases de toute fenêtre de premier niveau, ce qui comprend aussi les *popups*.
-La classe ``Stage`` dispose de nombreuses méthodes (ou redéfinitions) qui lui sont propres et indiquées dans la partie *Method Summary* de sa documentation, 
-ainsi que des méthodes héritées (et non redéfinies) de sa super-classe ``Window`` (et, par transitivité, de la super-classe ``Object``) indiquées dans les parties *Methods inherited from ...*.
+Ouvrez la documentation sur la classe `Stage`.
+ 
+Remarquez que cette classe étend la classe `Window` qui est plus générale. Elle définit les bases de toute fenêtre de 
+premier niveau, ce qui comprend aussi les *popups*. La classe `Stage` dispose de nombreuses méthodes (ou redéfinitions) 
+qui lui sont propres et indiquées dans la partie *Method Summary* de sa documentation, ainsi que des méthodes héritées 
+(et non redéfinies) de sa super-classe `Window` (et, par transitivité, de la super-classe `Object`) indiquées dans 
+les parties *Methods inherited from ...*.
+
+Pour valider cet exercice, supprimez l'annotation @Ignore dans la classe `TestMyFirstJavaFXWindow` et lancez les tests 
+pour vérifier que tout est correct.
 
 #### Exercice 2
 
