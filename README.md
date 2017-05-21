@@ -200,4 +200,26 @@ thread courant (celui qui fait appel au ``println``).
 simple application.
 
 
+### Première application graphique : composants et événements
+Maintenant que nous comprenons le cycle de vie d'une application JavaFX, nous allons pouvoir commencer à écrire un 
+premier programme graphique qui se contentera d'afficher un texte au centre de la fenêtre.
+ 
 
+#### Exercice 6
+
+Ouvrez la classe `HelloLabelTest` et modifier la methode `start()` pour que votre application affiche une fenêtre 
+respectant les contraintes suivante : 
+
+- Le titre de la fenêtre principale doit être "Hello !"
+
+- La longueur et la largeur doivent être 250 et 100
+
+- Le graphe de scène doit avoir pour racine un noeud du type `BorderPane`
+
+- Au centre de ce `BorderPane`, placer un `Label` (voir la documentation de cette classe) ayant pour `text` la chaine `Hello !`
+
+- Rendre visible la fenêtre
+
+Exécutez l'application pour vérifier le fonctionnement de cette fenêtre. Redimensionnez-là pour voir comment se comporte 
+votre `Label`. Comme pour l'exercice précédent, vous devez activer les tests les un après les autres et soumettre votre 
+solution après chaque itération du cycle principal du workflow.
