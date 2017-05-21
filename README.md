@@ -260,6 +260,11 @@ respectant les contraintes suivante :
 
 - Construire un objet du type `ImageView` ouvrant l'image située à l'URL suivante : https://raw.githubusercontent.com/IUTInfoAix-M2105/Syllabus/master/assets/logo.png
 
+- Ajouter une feuille de style CSS pour améliorer l'apparence de votre application. Pour ce faire, ajouter la ligne suivante juste après la création de l'objet `Scene` :
+```java
+        scene.getStylesheets().add(getClass().getClassLoader().getResource("DarkTheme.css").toExternalForm());
+```
+
 - Positionner cet objet comme valeur de la propriété `Graphic` de notre bouton.
  
 - Agrandir la hauteur de la scène à 250
@@ -344,7 +349,7 @@ La valeur *x* doit correspondre au nombre de fois ou le bouton a été actionné
 Exécutez l'application pour vérifier le fonctionnement de cette fenêtre. Comme pour l'exercice précédent, vous devez 
 activer les tests les un après les autres et soumettre votre solution après chaque itération du cycle principal du workflow.
 
-#### Exercice 10
+#### Exercice 11
 Avec les classes anonymes, l'écriture des écouteurs est grandement facilité. Malgré tout, le code associé n'est pas très 
 lisible et assez verbeux. Depuis Java 8, il est possible de rendre ce code encore plus explicite grâce à un nouveau 
 concept, les expressions lambda.
