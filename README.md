@@ -403,3 +403,6 @@ Ouvrez donc la classe `HelloBeatifulUsefulButton` et implémentez la en respecta
 
 Exécutez l'application pour vérifier le fonctionnement de cette fenêtre. Comme pour l'exercice précédent, vous devez 
 activer les tests les un après les autres et soumettre votre solution après chaque itération du cycle principal du workflow.
+
+
+### Sujets complémentaires : Animations, Gestionnaire de positionnement et dessin
