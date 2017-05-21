@@ -269,3 +269,77 @@ respectant les contraintes suivante :
 Exécutez l'application pour vérifier le fonctionnement de cette fenêtre. Comme pour l'exercice précédent, vous devez 
 activer les tests les un après les autres et soumettre votre solution après chaque itération du cycle principal du workflow.
 
+
+Bien que le bouton soit un peu plus attrayant, il n'est pour l'instant pas très interactif. Généralement, l'utilisateur 
+s'attend à ce qu'un bouton lance un traitement lorsqu'on l'actionne. Pour ce faire, Java permet de réagir aux événements 
+avec le mécanisme des écouteurs (`Listener`). Dans les exercices qui suivent nous allons voir plusieurs solutions pour 
+implémenter ce mécanisme.
+
+#### Exercice 9
+D'un point de vu purement technique, un `Listener` est un objet qui implémente l'interface 
+[`EventHandler<T extends Event>`](https://docs.oracle.com/javase/8/javafx/api/javafx/event/EventHandler.html). Cette 
+interface possède une unique méthode appelée `handle()` qui sera appelée lorsque l'un événement sera reçu.
+
+Pour qu'un *écouteur* soit appelé au bon moment (lorsqu'un événement est déclenché par une action extérieure), il faut 
+qu'il s'enregistre auprès de l'objet qu'il souhaite écouter. Pour la classe `Button`, c'est la méthode `setOnAction()` 
+qui permet à un écouteur de s'enregistrer pour être informé quand le bouton est actionné.
+
+Ouvrez donc les classes `HelloBeatifulUsefulButton` et `EcouteurSimple`, puis implémentez les en respectant les 
+contraintes suivantes :
+
+- La classe `EcouteurSimple` doit implémenter l'interface `EventHandler<ActionEvent>`
+
+- La méthode `handle()` de cette classe se contente d'afficher le texte "Bouton actionné" sur la sortie standard.
+
+- La classe `HelloBeatifulUsefulButton` doit respecter les même contraintes que `HelloBeautifulButton`.
+
+- Le bouton doit ajouter une instance de la classe `EcouteurSimple` comme écouteur
+
+- Rendre visible la fenêtre
+
+Exécutez l'application pour vérifier le fonctionnement de cette fenêtre. Comme pour l'exercice précédent, vous devez 
+activer les tests les un après les autres et soumettre votre solution après chaque itération du cycle principal du workflow.
+
+#### Exercice 10
+Créer une classe spécialement pour être utilisé une seule fois peut être considéré comme fastidieux. En plus, il y a des 
+cas où l'écouteur peut nécéssiter d'accéder à des données locales et/ou des données membres privées. L'une des solutions 
+dans ce cas est d'utiliser une classe anonyme.
+
+Un classe anonyme est un mécanisme du langage Java qui permet de **déclarer une classe** et de **créer un objet**
+de celle-ci en une seule et même expression. La classe anonyme est un sous-type d'une interface ou d'une classe abstraite 
+ou concrète.
+
+**Syntaxe :**
+```java
+Type var=new Type(param1,param2...) {
+ //définition de membres
+ //(méthode/champs/classe)
+};
+```
+
+Dans le cas d'un écouteur simple qui sera utilisé pour un seul composant, on pourait le créer comme suit: 
+```java
+EventHandler<ActionEvent> ecouteur = new EventHandler<ActionEvent>() {
+    @Override
+    public void handle(ActionEvent event) {
+        //Code de l'écouteur d'événement
+    }
+});
+```
+
+Ouvrez donc la classe `HelloBeatifulUsefulButton` et implémentez la en respectant les 
+contraintes suivantes :
+
+- L'écouteur d'événement du bouton devra être une classe anonyme qui implémente `EventHandler<ActionEvent>`
+
+- La méthode `handle()` de cette classe affiche le texte "Bouton actionné x fois" sur la sortie standard. 
+La valeur *x* doit correspondre au nombre de fois ou le bouton a été actionné.
+
+- L'objet crée précédement comme écouteur
+
+- La classe `HelloBeatifulUsefulButton` doit respecter les même contraintes que `HelloBeautifulButton`.
+
+- Rendre visible la fenêtre
+
+Exécutez l'application pour vérifier le fonctionnement de cette fenêtre. Comme pour l'exercice précédent, vous devez 
+activer les tests les un après les autres et soumettre votre solution après chaque itération du cycle principal du workflow.
