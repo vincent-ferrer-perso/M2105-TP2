@@ -236,13 +236,33 @@ respectant les contraintes suivante :
 
 - Le titre de la fenêtre principale doit être "Hello !"
 
-- La longueur et la largeur doivent être 250 et 100
+- La longueur et la largeur de la scène doivent être 250 et 100
 
 - Le graphe de scène doit avoir pour racine un noeud du type `BorderPane`
 
 - Au centre de ce `BorderPane`, placer un `Button` (voir la documentation de cette classe) ayant pour `text` la chaine `Hello !`
 
 - Ce bouton doit avoir pour `Id` la valeur `"buttonHello"`
+
+- Rendre visible la fenêtre
+
+Exécutez l'application pour vérifier le fonctionnement de cette fenêtre. Comme pour l'exercice précédent, vous devez 
+activer les tests les un après les autres et soumettre votre solution après chaque itération du cycle principal du workflow.
+
+#### Exercice 8
+
+Pour l'instant notre bouton parait bien triste. Ajoutons-lui quelques décorations pour qu'il soit plus esthétique.
+
+Ouvrez la classe `HelloBeautifulButton` et modifier la methode `start()` pour que votre application affiche une fenêtre 
+respectant les contraintes suivante :
+
+- Respecter toutes les contraintes de l'exercice précédent
+
+- Construire un objet du type `ImageView` ouvrant l'image située à l'URL suivante : https://raw.githubusercontent.com/IUTInfoAix-M2105/Syllabus/master/assets/logo.png
+
+- Positionner cet objet comme valeur de la propriété `Graphic` de notre bouton.
+ 
+- Agrandir la hauteur de la scène à 250
 
 - Rendre visible la fenêtre
 
