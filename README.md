@@ -344,7 +344,7 @@ La valeur *x* doit correspondre au nombre de fois ou le bouton a été actionné
 Exécutez l'application pour vérifier le fonctionnement de cette fenêtre. Comme pour l'exercice précédent, vous devez 
 activer les tests les un après les autres et soumettre votre solution après chaque itération du cycle principal du workflow.
 
-#### Exercice 10
+#### Exercice 11
 Avec les classes anonymes, l'écriture des écouteurs est grandement facilité. Malgré tout, le code associé n'est pas très 
 lisible et assez verbeux. Depuis Java 8, il est possible de rendre ce code encore plus explicite grâce à un nouveau 
 concept, les expressions lambda.
