@@ -317,7 +317,7 @@ Type var=new Type(param1,param2...) {
 };
 ```
 
-Dans le cas d'un écouteur simple qui sera utilisé pour un seul composant, on pourait le créer comme suit: 
+Dans le cas d'un écouteur simple utilisé pour un seul composant, on pourait le créer comme suit: 
 ```java
 EventHandler<ActionEvent> ecouteur = new EventHandler<ActionEvent>() {
     @Override
@@ -340,6 +340,61 @@ La valeur *x* doit correspondre au nombre de fois ou le bouton a été actionné
 - La classe `HelloBeatifulUsefulButton` doit respecter les même contraintes que `HelloBeautifulButton`.
 
 - Rendre visible la fenêtre
+
+Exécutez l'application pour vérifier le fonctionnement de cette fenêtre. Comme pour l'exercice précédent, vous devez 
+activer les tests les un après les autres et soumettre votre solution après chaque itération du cycle principal du workflow.
+
+#### Exercice 10
+Avec les classes anonymes, l'écriture des écouteurs est grandement facilité. Malgré tout, le code associé n'est pas très 
+lisible et assez verbeux. Depuis Java 8, il est possible de rendre ce code encore plus explicite grace à un nouveau 
+concept, les expressions lambda.
+
+Les expressions lambda sont parmi les nouveaux concepts introduits dans Java 8, elles ont connu un développement 
+considérable pour ses rapports étroits avec les langages de programmation fonctionnelle. Son intérêt principal provient 
+de la simplicité de sa syntaxe.
+
+Les lambda sont une syntaxe particulière qui permet de remplacer les classes anonymes dans certains cas : celui de 
+l'implémentation des interface fonctionnelle.
+
+Pour vous simplifier, une interface fonctionnelle n’est rien d’autre qu’une interface avec une seule méthode abstraite. 
+Et c’est ce qui permet d’implémenter facilement les expressions lambda. Avec cette annotation `@FunctionalInterface`, on 
+indique au compilateur de bien vérifier que l’interface possède bien une seule méthode abstraite. C’est le même principe 
+que l'annotation `@Override`, vue précédemment dans l’implémentation de nos différentes opérations. La seule condition 
+pour que l’affectation d’une expression lambda à une variable (d’une interface fonctionnelle) soit possible est que, 
+la signature de la méthode abstraite de l’interface fonctionnelle doit "matcher" celle de l’expression lambda.
+Pour simplifier la compréhension, on peut imaginer que l’expression lambda est une implémentation de l’interface 
+fonctionnelle.
+
+Une expression lambda comprend trois (3) parties :
+
+- Paramètre(s)
+
+- `->` opérateur
+
+- Corps (le code exécuté)
+
+
+Par exemple dans le cas de l'interface fonctionnelle `EventHandler<T>`, on pourait écrire la lambda suivante pour faire 
+le même traitement que celui attendu à l'exercice 9 :
+```java
+EventHandler<ActionEvent> ecouteur = event -> System.out.println("Bouton actionné");
+```
+
+Cette expression lambda se décompose comme suit : 
+- `event` est le paramêtre de l'expression. Il correspond au paramètre de la méthode de l'interface fonctionnelle associée. 
+Dans notre cas, `event` sera donc du type `ActionEvent`.
+
+- l'opérateur `->` qui est l'élément syntaxique qui identifie une lambda
+
+- `System.out.println("Bouton actionné")` est le code qui sera exécuté lors de l'appel de la lambda. Dans notre cas le 
+code qui s'exécutera lorsque un événement se produira.
+
+
+Ouvrez donc la classe `HelloBeatifulUsefulButton` et implémentez la en respectant les contraintes suivantes :
+
+- La classe `HelloBeatifulUsefulButton` doit respecter les même contraintes que `HelloBeatifulUsefulButton` du paquetage `exercice10`.
+
+- L'écouteur d'événement devra être écrit en utilisant le mécanisme des expressions lambda.
 
 Exécutez l'application pour vérifier le fonctionnement de cette fenêtre. Comme pour l'exercice précédent, vous devez 
 activer les tests les un après les autres et soumettre votre solution après chaque itération du cycle principal du workflow.
