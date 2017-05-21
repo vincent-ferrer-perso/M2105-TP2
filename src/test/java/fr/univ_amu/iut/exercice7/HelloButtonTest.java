@@ -1,5 +1,6 @@
-package fr.univ_amu.iut.exercice6;
+package fr.univ_amu.iut.exercice7;
 
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -14,7 +15,7 @@ import static org.testfx.api.FxAssert.verifyThat;
 import static org.testfx.util.NodeQueryUtils.hasText;
 
 
-public class HelloLabelTest extends ApplicationTest {
+public class HelloButtonTest extends ApplicationTest {
 
     @Ignore
     @Test
@@ -48,9 +49,9 @@ public class HelloLabelTest extends ApplicationTest {
 
     @Ignore
     @Test
-    public void should_initialize_label_with_text_hello(){
+    public void should_initialize_button_with_text_hello(){
         // then:
-        verifyThat("#labelHello", hasText("Hello !"));
+        verifyThat("#buttonHello", hasText("Hello !"));
     }
 
     @Ignore
@@ -63,8 +64,14 @@ public class HelloLabelTest extends ApplicationTest {
         }
     }
 
+    @Ignore
+    @Test
+    public void should_initialize_stage_with_useless_button() {
+        verifyThat("#buttonHello", (Button node) -> node.getOnAction() == null);
+    }
+
     @Override
     public void start(Stage stage) throws Exception {
-        new HelloLabel().start(stage);
+        new HelloButton().start(stage);
     }
 }

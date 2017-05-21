@@ -207,7 +207,7 @@ premier programme graphique qui se contentera d'afficher un texte au centre de l
 
 #### Exercice 6
 
-Ouvrez la classe `HelloLabelTest` et modifier la methode `start()` pour que votre application affiche une fenêtre 
+Ouvrez la classe `HelloLabel` et modifier la methode `start()` pour que votre application affiche une fenêtre 
 respectant les contraintes suivante : 
 
 - Le titre de la fenêtre principale doit être "Hello !"
@@ -218,8 +218,34 @@ respectant les contraintes suivante :
 
 - Au centre de ce `BorderPane`, placer un `Label` (voir la documentation de cette classe) ayant pour `text` la chaine `Hello !`
 
+- Ce label doit avoir pour `Id` la valeur `"labelHello"`
+
 - Rendre visible la fenêtre
 
 Exécutez l'application pour vérifier le fonctionnement de cette fenêtre. Redimensionnez-là pour voir comment se comporte 
 votre `Label`. Comme pour l'exercice précédent, vous devez activer les tests les un après les autres et soumettre votre 
 solution après chaque itération du cycle principal du workflow.
+
+#### Exercice 7
+Les labels sont des composants pour afficher un texte. Ils sont souvent utiliser conjointement avec des composants comme 
+les `TextField` (ou tout autre composant de saisie). Maintenant que nous avons vu ce composant passif, nous allons voir 
+le premier avec lequel nous pouvons interagir le `Button`.
+
+Ouvrez la classe `HelloButton` et modifier la methode `start()` pour que votre application affiche une fenêtre 
+respectant les contraintes suivante : 
+
+- Le titre de la fenêtre principale doit être "Hello !"
+
+- La longueur et la largeur doivent être 250 et 100
+
+- Le graphe de scène doit avoir pour racine un noeud du type `BorderPane`
+
+- Au centre de ce `BorderPane`, placer un `Button` (voir la documentation de cette classe) ayant pour `text` la chaine `Hello !`
+
+- Ce bouton doit avoir pour `Id` la valeur `"buttonHello"`
+
+- Rendre visible la fenêtre
+
+Exécutez l'application pour vérifier le fonctionnement de cette fenêtre. Comme pour l'exercice précédent, vous devez 
+activer les tests les un après les autres et soumettre votre solution après chaque itération du cycle principal du workflow.
+
