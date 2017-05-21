@@ -69,7 +69,7 @@ Ainsi que la déclaration de notre classe `MyFirstJavaFXWindow` le montre, toute
 sous-classe de `Application`.
 
 Dans un navigateur, ouvrez la documentation sur la classe `Application`. On observe que cette classe est **abstraite**, 
-ce qui signifie que notre classe **concrête** `MyFirstJavaFXWindow` qui l'étend doit implémenter (redéfinir) les méthodes 
+ce qui signifie que notre classe **concrète** `MyFirstJavaFXWindow` qui l'étend doit implémenter (redéfinir) les méthodes 
 abstraites de sa classe parente `Application`.
 
 Dans la partie *Method Summary* de la documentation, on remarque que la seule méthode abstraite d'`Application` est la 
@@ -207,16 +207,16 @@ premier programme graphique qui se contentera d'afficher un texte au centre de l
 
 #### Exercice 6
 
-Ouvrez la classe `HelloLabel` et modifier la methode `start()` pour que votre application affiche une fenêtre 
+Ouvrez la classe `HelloLabel` et modifier la méthode `start()` pour que votre application affiche une fenêtre 
 respectant les contraintes suivante : 
 
 - Le titre de la fenêtre principale doit être "Hello !"
 
 - La longueur et la largeur doivent être 250 et 100
 
-- Le graphe de scène doit avoir pour racine un noeud du type `BorderPane`
+- Le graphe de scène doit avoir pour racine un nœud du type `BorderPane`
 
-- Au centre de ce `BorderPane`, placer un `Label` (voir la documentation de cette classe) ayant pour `text` la chaine `Hello !`
+- Au centre de ce `BorderPane`, placer un `Label` (voir la documentation de cette classe) ayant pour `text` la chaîne `Hello !`
 
 - Ce label doit avoir pour `Id` la valeur `"labelHello"`
 
@@ -231,16 +231,16 @@ Les labels sont des composants pour afficher un texte. Ils sont souvent utiliser
 les `TextField` (ou tout autre composant de saisie). Maintenant que nous avons vu ce composant passif, nous allons voir 
 le premier avec lequel nous pouvons interagir le `Button`.
 
-Ouvrez la classe `HelloButton` et modifier la methode `start()` pour que votre application affiche une fenêtre 
+Ouvrez la classe `HelloButton` et modifier la méthode `start()` pour que votre application affiche une fenêtre 
 respectant les contraintes suivante : 
 
 - Le titre de la fenêtre principale doit être "Hello !"
 
 - La longueur et la largeur de la scène doivent être 250 et 100
 
-- Le graphe de scène doit avoir pour racine un noeud du type `BorderPane`
+- Le graphe de scène doit avoir pour racine un nœud du type `BorderPane`
 
-- Au centre de ce `BorderPane`, placer un `Button` (voir la documentation de cette classe) ayant pour `text` la chaine `Hello !`
+- Au centre de ce `BorderPane`, placer un `Button` (voir la documentation de cette classe) ayant pour `text` la chaîne `Hello !`
 
 - Ce bouton doit avoir pour `Id` la valeur `"buttonHello"`
 
@@ -253,7 +253,7 @@ activer les tests les un après les autres et soumettre votre solution après ch
 
 Pour l'instant notre bouton parait bien triste. Ajoutons-lui quelques décorations pour qu'il soit plus esthétique.
 
-Ouvrez la classe `HelloBeautifulButton` et modifier la methode `start()` pour que votre application affiche une fenêtre 
+Ouvrez la classe `HelloBeautifulButton` et modifier la méthode `start()` pour que votre application affiche une fenêtre 
 respectant les contraintes suivante :
 
 - Respecter toutes les contraintes de l'exercice précédent
@@ -302,7 +302,7 @@ activer les tests les un après les autres et soumettre votre solution après ch
 
 #### Exercice 10
 Créer une classe spécialement pour être utilisé une seule fois peut être considéré comme fastidieux. En plus, il y a des 
-cas où l'écouteur peut nécéssiter d'accéder à des données locales et/ou des données membres privées. L'une des solutions 
+cas où l'écouteur peut nécessiter d'accéder à des données locales et/ou des données membres privées. L'une des solutions 
 dans ce cas est d'utiliser une classe anonyme.
 
 Un classe anonyme est un mécanisme du langage Java qui permet de **déclarer une classe** et de **créer un objet**
@@ -317,7 +317,7 @@ Type var=new Type(param1,param2...) {
 };
 ```
 
-Dans le cas d'un écouteur simple utilisé pour un seul composant, on pourait le créer comme suit: 
+Dans le cas d'un écouteur simple utilisé pour un seul composant, on pourrait le créer comme suit: 
 ```java
 EventHandler<ActionEvent> ecouteur = new EventHandler<ActionEvent>() {
     @Override
@@ -335,7 +335,7 @@ contraintes suivantes :
 - La méthode `handle()` de cette classe affiche le texte "Bouton actionné x fois" sur la sortie standard. 
 La valeur *x* doit correspondre au nombre de fois ou le bouton a été actionné.
 
-- L'objet crée précédement comme écouteur
+- L'objet crée précédemment comme écouteur
 
 - La classe `HelloBeatifulUsefulButton` doit respecter les même contraintes que `HelloBeautifulButton`.
 
@@ -346,7 +346,7 @@ activer les tests les un après les autres et soumettre votre solution après ch
 
 #### Exercice 10
 Avec les classes anonymes, l'écriture des écouteurs est grandement facilité. Malgré tout, le code associé n'est pas très 
-lisible et assez verbeux. Depuis Java 8, il est possible de rendre ce code encore plus explicite grace à un nouveau 
+lisible et assez verbeux. Depuis Java 8, il est possible de rendre ce code encore plus explicite grâce à un nouveau 
 concept, les expressions lambda.
 
 Les expressions lambda sont parmi les nouveaux concepts introduits dans Java 8, elles ont connu un développement 
@@ -374,14 +374,14 @@ Une expression lambda comprend trois (3) parties :
 - Corps (le code exécuté)
 
 
-Par exemple dans le cas de l'interface fonctionnelle `EventHandler<T>`, on pourait écrire la lambda suivante pour faire 
+Par exemple dans le cas de l'interface fonctionnelle `EventHandler<T>`, on pourrait écrire la lambda suivante pour faire 
 le même traitement que celui attendu à l'exercice 9 :
 ```java
 EventHandler<ActionEvent> ecouteur = event -> System.out.println("Bouton actionné");
 ```
 
 Cette expression lambda se décompose comme suit : 
-- `event` est le paramêtre de l'expression. Il correspond au paramètre de la méthode de l'interface fonctionnelle associée. 
+- `event` est le paramètre de l'expression. Il correspond au paramètre de la méthode de l'interface fonctionnelle associée. 
 Dans notre cas, `event` sera donc du type `ActionEvent`.
 
 - l'opérateur `->` qui est l'élément syntaxique qui identifie une lambda
