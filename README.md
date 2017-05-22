@@ -243,7 +243,7 @@ activer les tests les uns après les autres et soumettre votre solution après c
 
 #### Exercice 8
 
-Pour l'instant notre bouton parait bien triste. Ajoutons-lui quelques décorations pour qu'il soit plus esthétique.
+Pour l'instant notre bouton paraît bien triste. Ajoutons-lui quelques décorations pour qu'il soit plus esthétique.
 
 Ouvrez la classe `HelloBeautifulButton` et modifiez la méthode `start()` pour que votre application affiche une fenêtre 
 respectant les contraintes suivantes :
