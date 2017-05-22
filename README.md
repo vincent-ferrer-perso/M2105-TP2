@@ -342,33 +342,33 @@ Exécutez l'application pour vérifier le fonctionnement de cette fenêtre. Comm
 activer les tests les uns après les autres et soumettre votre solution après chaque itération du cycle principal du workflow.
 
 #### Exercice 11
-Avec les classes anonymes, l'écriture des écouteurs est grandement facilité. Malgré tout, le code associé n'est pas très 
+Avec les classes anonymes, l'écriture des écouteurs est grandement facilitée. Malgré tout, le code associé n'est pas très 
 lisible et assez verbeux. Depuis Java 8, il est possible de rendre ce code encore plus explicite grâce à un nouveau 
 concept, les expressions lambda.
 
-Les expressions lambda sont parmi les nouveaux concepts introduits dans Java 8, elles ont connu un développement 
+Les expressions lambda sont parmi les nouveaux concepts introduits dans Java 8. Elles ont connu un développement 
 considérable pour ses rapports étroits avec les langages de programmation fonctionnelle. Son intérêt principal provient 
 de la simplicité de sa syntaxe.
 
 Les lambda sont une syntaxe particulière qui permet de remplacer les classes anonymes dans certains cas : celui de 
-l'implémentation des interface fonctionnelle.
+l'implémentation des interfaces fonctionnelles.
 
-Pour vous simplifier, une interface fonctionnelle n’est rien d’autre qu’une interface avec une seule méthode abstraite. 
-Et c’est ce qui permet d’implémenter facilement les expressions lambda. Avec cette annotation `@FunctionalInterface`, on 
+Dit simplement, **une interface fonctionnelle** n’est rien d’autre qu’une interface avec **une seule méthode abstraite**. 
+Et c’est ce qui permet d’implémenter facilement les expressions lambda. Avec l'annotation `@FunctionalInterface`, on 
 indique au compilateur de bien vérifier que l’interface possède bien une seule méthode abstraite. C’est le même principe 
 que l'annotation `@Override`, vue précédemment dans l’implémentation de nos différentes opérations. La seule condition 
 pour que l’affectation d’une expression lambda à une variable (d’une interface fonctionnelle) soit possible est que, 
-la signature de la méthode abstraite de l’interface fonctionnelle doit "matcher" celle de l’expression lambda.
-Pour simplifier la compréhension, on peut imaginer que l’expression lambda est une implémentation de l’interface 
+la signature de la méthode abstraite de l’interface fonctionnelle doit "matcher" (correspondre à) celle de l’expression 
+lambda. Pour simplifier la compréhension, on peut imaginer que l’expression lambda est une implémentation de l’interface 
 fonctionnelle.
 
 Une expression lambda comprend trois (3) parties :
 
-- Paramètre(s)
+- ses paramètre(s), entre parenthèses et séparés par une virgule quand il y en a plusieurs
 
-- `->` opérateur
+- l'opérateur `->`
 
-- Corps (le code exécuté)
+- son corps (le code exécuté).
 
 
 Par exemple dans le cas de l'interface fonctionnelle `EventHandler<T>`, on pourrait écrire la lambda suivante pour faire 
@@ -378,23 +378,24 @@ EventHandler<ActionEvent> ecouteur = event -> System.out.println("Bouton actionn
 ```
 
 Cette expression lambda se décompose comme suit : 
-- `event` est le paramètre de l'expression. Il correspond au paramètre de la méthode de l'interface fonctionnelle associée. 
-Dans notre cas, `event` sera donc du type `ActionEvent`.
+- `event` est le seul paramètre de l'expression. Il n'est donc pas nécessaire de l'encadrer par des parenthèses. Il correspond 
+au paramètre de la méthode de l'interface fonctionnelle associée. Dans notre cas, `event` sera donc du type `ActionEvent`.
 
 - l'opérateur `->` qui est l'élément syntaxique qui identifie une lambda
 
-- `System.out.println("Bouton actionné")` est le code qui sera exécuté lors de l'appel de la lambda. Dans notre cas le 
-code qui s'exécutera lorsque un événement se produira.
+- `System.out.println("Bouton actionné")` est le code qui sera exécuté lors de l'appel de la lambda. Dans cet exemple,
+ c'est le code exécuté pour gérer un événement `ActionEvent`. Dans le cas où le corps comporte plusieurs instructions, il faut les
+ encadrer d'accolades (bloc d'instructions).
 
 
-Ouvrez donc la classe `HelloBeatifulUsefulButton` et implémentez la en respectant les contraintes suivantes :
+Ouvrez la classe `HelloBeatifulUsefulButton` et implémentez la en respectant les contraintes suivantes :
 
-- La classe `HelloBeatifulUsefulButton` doit respecter les même contraintes que `HelloBeatifulUsefulButton` du paquetage `exercice10`.
+- La classe `HelloBeatifulUsefulButton` doit respecter les mêmes contraintes que `HelloBeatifulUsefulButton` du paquetage `exercice10`.
 
 - L'écouteur d'événement devra être écrit en utilisant le mécanisme des expressions lambda.
 
 Exécutez l'application pour vérifier le fonctionnement de cette fenêtre. Comme pour l'exercice précédent, vous devez 
-activer les tests les un après les autres et soumettre votre solution après chaque itération du cycle principal du workflow.
+activer les tests les uns après les autres et soumettre votre solution après chaque itération du cycle principal du workflow.
 
 
 ### Sujets complémentaires : Animations, Gestionnaire de positionnement et dessin
