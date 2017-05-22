@@ -77,24 +77,25 @@ méthode `start()`.  C'est la seule méthode que notre classe doit forcément im
 être instanciable).
 
 Avant de s'intéresser à son contenu, observons que la classe `MyFirstJavaFXWindow` est une classe 
-exécutable car elle définit la méthode `main()`. Celle-ci se contente d'appeler la méthode `launch()` qui est une 
-méthode **statique** de la classe `Application`. Le rôle de cette méthode est de créer une instance de notre 
-`Application` et de la démarrer, en lui communiquant les arguments de la ligne de commande.
+exécutable car elle définit la méthode `main()`. Celle-ci se contente d'appeler la méthode `launch()` en lui communiquant 
+les arguments de la ligne de commande. `launch()` est une méthode **statique** de la classe `Application`. Son rôle est 
+de créer une instance de notre `Application` et de la démarrer.
 
 La méthode `start()` prend en paramètre une instance de la classe `Stage` qui est créée par JavaFX dans `launch()`, 
 et qui représente la fenêtre principale de notre application (qui pourra en créer d'autres si besoin).
-Dans notre application, cette fenêtre est vide. Nous nous sommes contentés d'en définir le titre avec la méthode 
+Dans notre application, cette fenêtre est vide, alors qu'elle devrait être dotée d'une **scène** contenant des composants,
+ comme nous le verrons plus loin ! Pour débuter, nous nous sommes contentés d'en définir le titre avec la méthode 
 `setTitle()` puis de demander son affichage avec la méthode `show()`.
 
 Ouvrez la documentation sur la classe `Stage`.
  
-Remarquez que cette classe étend la classe `Window` qui est plus générale. Elle définit les bases de toute fenêtre de 
+Remarquez que cette classe étend la classe `Window` qui est plus générale. `Window` définit les bases de toute fenêtre de 
 premier niveau, ce qui comprend aussi les *popups*. La classe `Stage` dispose de nombreuses méthodes (ou redéfinitions) 
 qui lui sont propres et indiquées dans la partie *Method Summary* de sa documentation, ainsi que des méthodes héritées 
 (et non redéfinies) de sa super-classe `Window` (et, par transitivité, de la super-classe `Object`) indiquées dans 
 les parties *Methods inherited from ...*.
 
-Pour valider cet exercice, supprimez l'annotation @Ignore dans la classe `TestMyFirstJavaFXWindow` et lancez les tests 
+Pour valider cet exercice, supprimez l'annotation `@Ignore` dans la classe `TestMyFirstJavaFXWindow` et lancez les tests 
 pour vérifier que tout est correct.
 
 #### Exercice 2
@@ -108,6 +109,10 @@ Terminez par l'ajout d'un appel à la méthode `show()` pour afficher la fenêtr
 
 Exécutez l'application pour vérifier les conséquences de vos modifications. Comme pour l'exercice précédent, vous devez 
 activer les tests les un après les autres et soumettre votre solution après chaque itération du cycle principal du workflow.
+
+##### Remarque
+La taille de la fenêtre se définit rarement directement comme dans cet exercice. En général, on la laisse s'adapter à la 
+**scène** qu'elle contient. Elle-même pourra avoir une taille fixée, ou calculée en fonction de son contenu. 
 
 #### Exercice 3
 
