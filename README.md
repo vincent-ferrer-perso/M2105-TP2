@@ -298,7 +298,7 @@ Exécutez l'application pour vérifier le fonctionnement de cette fenêtre. Comm
 activer les tests les uns après les autres et soumettre votre solution après chaque itération du cycle principal du workflow.
 
 #### Exercice 10
-Créer une classe spécialement pour être utilisée une seule fois, comme vous l'avez fait pour `EcouteurSimple` peut être 
+Créer une classe spécialement pour être utilisée une seule fois, comme vous l'avez fait pour `EcouteurSimple`, peut être 
 considéré comme fastidieux. En plus, il y a des cas où l'écouteur peut nécessiter d'accéder à des données locales et/ou 
 des données membres privées. L'une des solutions dans ce cas est d'utiliser une classe anonyme.
 
@@ -364,7 +364,7 @@ fonctionnelle.
 
 Une expression lambda comprend trois (3) parties :
 
-- ses paramètre(s), entre parenthèses et séparés par une virgule quand il y en a plusieurs
+- son(ses) paramètre(s), entre parenthèses et séparés par une virgule quand il y en a plusieurs
 
 - l'opérateur `->`
 
@@ -378,7 +378,7 @@ EventHandler<ActionEvent> ecouteur = event -> System.out.println("Bouton actionn
 ```
 
 Cette expression lambda se décompose comme suit : 
-- `event` est le seul paramètre de l'expression. Il n'est donc pas nécessaire de l'encadrer par des parenthèses. Il correspond 
+- `event` est le seul paramètre de l'expression. Il n'est donc pas nécessaire de l'encadrer de parenthèses. Il correspond 
 au paramètre de la méthode de l'interface fonctionnelle associée. Dans notre cas, `event` sera donc du type `ActionEvent`.
 
 - l'opérateur `->` qui est l'élément syntaxique qui identifie une lambda
