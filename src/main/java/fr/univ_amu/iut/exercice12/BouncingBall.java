@@ -16,7 +16,7 @@ import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class Metronome extends Application {
+public class BouncingBall extends Application {
 
     private Button startButton;
     private Button pauseButton;
@@ -68,7 +68,7 @@ public class Metronome extends Application {
         Scene scene = new Scene(root, 400, 450);
 
         stage.setScene(scene);
-        stage.setTitle("Metronome");
+        stage.setTitle("BouncingBall");
         stage.show();
     }
 }
