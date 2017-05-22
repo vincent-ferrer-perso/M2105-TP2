@@ -210,7 +210,7 @@ premier programme graphique qui se contentera d'afficher un texte au centre de l
 
 #### Exercice 6
 
-Ouvrez la classe `HelloLabel` et modifier la méthode `start()` pour que votre application affiche une fenêtre 
+Ouvrez la classe `HelloLabel` et modifiez la méthode `start()` pour que votre application affiche une fenêtre 
 respectant les contraintes suivantes : 
 
 - Le titre de la fenêtre principale doit être "Hello !"
@@ -223,41 +223,30 @@ respectant les contraintes suivantes :
 
 - Ce label doit avoir pour `Id` la valeur `"labelHello"`
 
-- la fenêtre doit être visible
+- La fenêtre doit être visible
 
 Exécutez l'application pour vérifier le fonctionnement de cette fenêtre. Redimensionnez-là pour voir comment se comporte 
 votre `Label`. Comme pour l'exercice précédent, vous devez activer les tests les uns après les autres et soumettre votre 
 solution après chaque itération du cycle principal du workflow.
 
 #### Exercice 7
-Les labels sont des composants pour afficher un texte. Ils sont souvent utiliser conjointement avec des composants comme 
+Les labels sont des composants pour afficher un texte. Ils sont souvent utilisés conjointement avec des composants comme 
 les `TextField` (ou tout autre composant de saisie). Maintenant que nous avons vu ce composant passif, nous allons voir 
-le premier avec lequel nous pouvons interagir le `Button`.
+le premier avec lequel nous pouvons interagir : le `Button`.
 
-Ouvrez la classe `HelloButton` et modifier la méthode `start()` pour que votre application affiche une fenêtre 
-respectant les contraintes suivante : 
-
-- Le titre de la fenêtre principale doit être "Hello !"
-
-- La longueur et la largeur de la scène doivent être 250 et 100
-
-- Le graphe de scène doit avoir pour racine un nœud du type `BorderPane`
-
-- Au centre de ce `BorderPane`, placer un `Button` (voir la documentation de cette classe) ayant pour `text` la chaîne `Hello !`
-
-- Ce bouton doit avoir pour `Id` la valeur `"buttonHello"`
-
-- Rendre visible la fenêtre
+Ouvrez la classe `HelloButton` et modifiez la méthode `start()` pour que votre application affiche une fenêtre 
+respectant les mêmes contraintes qu'à l'exercice 6, mais à la place d'un `Label`, vous utiliserez un `Button` (voir la 
+documentation de cette classe) ayant pour `text` la chaîne `Hello !` et pour `Id` la valeur `"buttonHello"`.
 
 Exécutez l'application pour vérifier le fonctionnement de cette fenêtre. Comme pour l'exercice précédent, vous devez 
-activer les tests les un après les autres et soumettre votre solution après chaque itération du cycle principal du workflow.
+activer les tests les uns après les autres et soumettre votre solution après chaque itération du cycle principal du workflow.
 
 #### Exercice 8
 
 Pour l'instant notre bouton parait bien triste. Ajoutons-lui quelques décorations pour qu'il soit plus esthétique.
 
-Ouvrez la classe `HelloBeautifulButton` et modifier la méthode `start()` pour que votre application affiche une fenêtre 
-respectant les contraintes suivante :
+Ouvrez la classe `HelloBeautifulButton` et modifiez la méthode `start()` pour que votre application affiche une fenêtre 
+respectant les contraintes suivantes :
 
 - Respecter toutes les contraintes de l'exercice précédent
 
