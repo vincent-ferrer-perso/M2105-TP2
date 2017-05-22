@@ -172,10 +172,10 @@ avant et après l'appel de `launch()`
 
 Puis exécutez (et testez) cette classe, sans en fermer la fenêtre.
 
-Remarquez que l'affichage s'arrête à celui **après** le ``show()`` qui a rendu visible la fenêtre. À ce stade, la 
-méthode ``start()`` est terminée. Java (FX) attend désormais que la fenêtre de l'application soit fermée.
+Remarquez que l'affichage s'arrête à celui **après** le `show()` qui a rendu visible la fenêtre. À ce stade, la 
+méthode `start()` est terminée. Java (FX) attend désormais que la fenêtre de l'application soit fermée.
 
-Fermez la fenêtre et observez que la méthode ``stop()`` est alors appelée, ce qui met fin à notre application, 
+Fermez la fenêtre et observez que la méthode `stop()` est alors appelée, ce qui met fin à notre application, 
 puis que les instructions suivant le `launch()` de la méthode `main()` sont exécutées ensuite.
 
 
@@ -183,25 +183,23 @@ puis que les instructions suivant le `launch()` de la méthode `main()` sont ex�
 
 Pour terminer l'étude du cycle de vie, intéressons-nous aux "organes" de Java qui animent (exécutent) notre application.
 Pour réaliser certaines tâches, la JVM utilise des *threads*, qui sont des fils d'exécution distincts d'un même processus.
-En général, un *processus* (ou l'un de ses threads) crée des thread pour réaliser des tâches annexes tout en continuant 
-ses propres tâches. Bien que réducteur, retenons simplement que les thread s'exécutent en parallèle, peuvent se 
+En général, un *processus* (ou l'un de ses threads) crée des threads pour réaliser des tâches annexes tout en continuant 
+ses propres tâches. Bien que ce soit réducteur, retenons simplement que les thread s'exécutent en parallèle, peuvent se 
 synchroniser, et partagent ensemble la mémoire du processus et ont donc accès aux mêmes objets de l'application.
 
 #### Exercice 5
 
 Ouvrez la classe ``WhoIsWho``, puis :
-1. ouvrez la documentation de la classe ``Thread`` de Java8, qui est la super classe des threads de la JVM, et recherchez-y :
+1. ouvrez la documentation de la classe `Thread` de Java8, qui est la super classe des threads de la JVM, et recherchez-y :
+    * la méthode statique qui renvoie le `Thread` courant,
+    * la méthode d'instance qui renvoie un `String` contenant le nom du thread (oui, ils ont un petit nom)
 
-* la méthode statique qui renvoie le Thread courant,
+2. faites en sorte que chaque méthode du cycle de vie ait un affichage identique à celui de l'exercice 4. 
 
-* la méthode d'instance qui renvoie un String contenant le nom du thread (oui, ils ont un petit nom)
-
-2. Faite en sorte que chaque méthode du cycle de vie ait un affichage identique à celui de l'exercice 4. 
-
-2. préfixez chaque affichage de l'application par la chaîne ``[``*nom*``]`` suivi d'un espace, où *nom* est le nom du 
+3. préfixez chaque affichage de l'application par la chaîne ``[``*nom*``]`` suivi d'un espace, où *nom* est le nom du 
 thread courant (celui qui fait appel au ``println``).
   
-Éxécutez ensuite l'application pour vérifier quels threads interviennent à quel étape du cycle de vie de cette si 
+Éxécutez ensuite l'application pour vérifier quels threads interviennent à quelle étape du cycle de vie de cette si 
 simple application.
 
 
@@ -213,22 +211,22 @@ premier programme graphique qui se contentera d'afficher un texte au centre de l
 #### Exercice 6
 
 Ouvrez la classe `HelloLabel` et modifier la méthode `start()` pour que votre application affiche une fenêtre 
-respectant les contraintes suivante : 
+respectant les contraintes suivantes : 
 
 - Le titre de la fenêtre principale doit être "Hello !"
 
-- La longueur et la largeur doivent être 250 et 100
+- Le `Stage` doit contenir une `Scene` de largeur 250 et de hauteur 100
 
-- Le graphe de scène doit avoir pour racine un nœud du type `BorderPane`
+- Le graphe de cette scène doit avoir pour racine un nœud du type `BorderPane`
 
-- Au centre de ce `BorderPane`, placer un `Label` (voir la documentation de cette classe) ayant pour `text` la chaîne `Hello !`
+- Au centre de ce `BorderPane`, placez un `Label` (voir la documentation de cette classe) ayant pour `text` la chaîne `Hello !`
 
 - Ce label doit avoir pour `Id` la valeur `"labelHello"`
 
-- Rendre visible la fenêtre
+- la fenêtre doit être visible
 
 Exécutez l'application pour vérifier le fonctionnement de cette fenêtre. Redimensionnez-là pour voir comment se comporte 
-votre `Label`. Comme pour l'exercice précédent, vous devez activer les tests les un après les autres et soumettre votre 
+votre `Label`. Comme pour l'exercice précédent, vous devez activer les tests les uns après les autres et soumettre votre 
 solution après chaque itération du cycle principal du workflow.
 
 #### Exercice 7
