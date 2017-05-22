@@ -4,9 +4,12 @@ import javafx.animation.Animation;
 import javafx.animation.Interpolator;
 import javafx.animation.TranslateTransition;
 import javafx.application.Application;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Slider;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
@@ -21,7 +24,6 @@ public class Metronome extends Application {
     private Button stopButton;
     private Circle circle;
 
-
     public static void main(String[] args) {
         Application.launch(args);
     }
@@ -29,14 +31,15 @@ public class Metronome extends Application {
     @Override
     public void start(Stage stage) {
 
-        circle = new Circle(100, 10, 10, Color.BLUE);
+        circle = new Circle(200, 10, 10, Color.BLUE);
 
         TranslateTransition anim = new TranslateTransition(new Duration(1000.0), circle);
+
         anim.setFromY(10);
         anim.setToY(400);
         anim.setAutoReverse(true);
         anim.setCycleCount(Animation.INDEFINITE);
-        anim.setInterpolator(Interpolator.LINEAR);
+        anim.setInterpolator(Interpolator.EASE_BOTH);
 
         startButton = new Button("Start");
         startButton.setOnAction(e -> anim.playFromStart());
@@ -55,9 +58,14 @@ public class Metronome extends Application {
                 pauseButton,
                 resumeButton,
                 stopButton);
+        commands.setAlignment(Pos.CENTER);
 
-        VBox group = new VBox(commands, circle);
-        Scene scene = new Scene(group, 400, 500);
+        Slider slider = new Slider(0.1, 5, 1);
+        slider.valueProperty().addListener((observable, oldValue, newValue) -> anim.setRate(newValue.doubleValue()));
+
+        VBox root = new VBox(commands, slider, new Pane(circle));
+        root.setAlignment(Pos.TOP_CENTER);
+        Scene scene = new Scene(root, 400, 450);
 
         stage.setScene(scene);
         stage.setTitle("Metronome");
