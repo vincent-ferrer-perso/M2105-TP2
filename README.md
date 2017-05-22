@@ -295,21 +295,21 @@ contraintes suivantes :
 - Rendre visible la fenêtre
 
 Exécutez l'application pour vérifier le fonctionnement de cette fenêtre. Comme pour l'exercice précédent, vous devez 
-activer les tests les un après les autres et soumettre votre solution après chaque itération du cycle principal du workflow.
+activer les tests les uns après les autres et soumettre votre solution après chaque itération du cycle principal du workflow.
 
 #### Exercice 10
-Créer une classe spécialement pour être utilisé une seule fois peut être considéré comme fastidieux. En plus, il y a des 
-cas où l'écouteur peut nécessiter d'accéder à des données locales et/ou des données membres privées. L'une des solutions 
-dans ce cas est d'utiliser une classe anonyme.
+Créer une classe spécialement pour être utilisée une seule fois, comme vous l'avez fait pour `EcouteurSimple` peut être 
+considéré comme fastidieux. En plus, il y a des cas où l'écouteur peut nécessiter d'accéder à des données locales et/ou 
+des données membres privées. L'une des solutions dans ce cas est d'utiliser une classe anonyme.
 
-Un classe anonyme est un mécanisme du langage Java qui permet de **déclarer une classe** et de **créer un objet**
+Une classe anonyme est un mécanisme du langage Java qui permet de **déclarer une classe** et de **créer un objet (instance)**
 de celle-ci en une seule et même expression. La classe anonyme est un sous-type d'une interface ou d'une classe abstraite 
 ou concrète.
 
 **Syntaxe :**
 ```java
 Type var=new Type(param1,param2...) {
- //définition de membres
+ //(re)définition de membres
  //(méthode/champs/classe)
 };
 ```
@@ -321,25 +321,25 @@ EventHandler<ActionEvent> ecouteur = new EventHandler<ActionEvent>() {
     public void handle(ActionEvent event) {
         //Code de l'écouteur d'événement
     }
-});
+};
 ```
 
-Ouvrez donc la classe `HelloBeatifulUsefulButton` et implémentez la en respectant les 
+Ouvrez donc la classe `HelloBeatifulUsefulButton` (du paquetage `exercice2`) et implémentez la en respectant les 
 contraintes suivantes :
 
 - L'écouteur d'événement du bouton devra être une classe anonyme qui implémente `EventHandler<ActionEvent>`
 
 - La méthode `handle()` de cette classe affiche le texte "Bouton actionné x fois" sur la sortie standard. 
-La valeur *x* doit correspondre au nombre de fois ou le bouton a été actionné.
+La valeur *x* doit correspondre au nombre de fois que le bouton a été actionné.
 
-- L'objet crée précédemment comme écouteur
+- L'objet créé ainsi doit être enregistré comme écouteur du bouton
 
-- La classe `HelloBeatifulUsefulButton` doit respecter les même contraintes que `HelloBeautifulButton`.
+- La classe `HelloBeatifulUsefulButton` doit respecter les mêmes contraintes que `HelloBeautifulButton`
 
 - Rendre visible la fenêtre
 
 Exécutez l'application pour vérifier le fonctionnement de cette fenêtre. Comme pour l'exercice précédent, vous devez 
-activer les tests les un après les autres et soumettre votre solution après chaque itération du cycle principal du workflow.
+activer les tests les uns après les autres et soumettre votre solution après chaque itération du cycle principal du workflow.
 
 #### Exercice 11
 Avec les classes anonymes, l'écriture des écouteurs est grandement facilité. Malgré tout, le code associé n'est pas très 
