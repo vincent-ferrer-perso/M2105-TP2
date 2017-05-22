@@ -252,13 +252,13 @@ respectant les contraintes suivantes :
 
 - Construire un objet du type `ImageView` ouvrant l'image située à l'URL suivante : https://raw.githubusercontent.com/IUTInfoAix-M2105/Syllabus/master/assets/logo.png
 
+- Positionner cet objet comme valeur de la propriété `Graphic` de notre bouton.
+
 - Ajouter une feuille de style CSS pour améliorer l'apparence de votre application. Pour ce faire, ajouter la ligne suivante juste après la création de l'objet `Scene` :
 ```java
         scene.getStylesheets().add(getClass().getClassLoader().getResource("DarkTheme.css").toExternalForm());
 ```
 
-- Positionner cet objet comme valeur de la propriété `Graphic` de notre bouton.
- 
 - Agrandir la hauteur de la scène à 250
 
 - Rendre visible la fenêtre
