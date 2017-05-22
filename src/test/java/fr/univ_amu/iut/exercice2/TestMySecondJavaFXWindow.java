@@ -1,6 +1,5 @@
 package fr.univ_amu.iut.exercice2;
 
-import fr.univ_amu.iut.exercice1.MyFirstJavaFXWindow;
 import javafx.stage.Stage;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -10,11 +9,8 @@ import org.testfx.framework.junit.ApplicationTest;
 import java.util.concurrent.TimeoutException;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
 
-/**
- * Created by sebastien on 20/05/17.
- */
 public class TestMySecondJavaFXWindow extends ApplicationTest {
 
     @Ignore
@@ -31,7 +27,7 @@ public class TestMySecondJavaFXWindow extends ApplicationTest {
     @Test
     public void should_initialize_stage_is_always_on_top() {
         try {
-        assertThat(FxToolkit.registerPrimaryStage().alwaysOnTopProperty().get()).isTrue();
+            assertThat(FxToolkit.registerPrimaryStage().alwaysOnTopProperty().get()).isTrue();
         } catch (TimeoutException e) {
             fail();
         }

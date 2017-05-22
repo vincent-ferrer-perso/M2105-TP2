@@ -2,7 +2,6 @@ package fr.univ_amu.iut.exercice3;
 
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import org.junit.After;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.testfx.api.FxToolkit;
@@ -11,11 +10,8 @@ import org.testfx.framework.junit.ApplicationTest;
 import java.util.concurrent.TimeoutException;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
 
-/**
- * Created by sebastien on 20/05/17.
- */
 public class TestMyUndecoratedJavaFXWindow extends ApplicationTest {
 
     @Ignore

@@ -9,6 +9,10 @@ public class WhoIsWho extends Application {
 
     }
 
+    public static void main(String[] args) {
+        launch(args);
+    }
+
     @Override
     public void init() throws Exception {
 
@@ -23,9 +27,5 @@ public class WhoIsWho extends Application {
     public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("WhoIsWho");
         primaryStage.show();
-    }
-
-    public static void main(String[] args) {
-        launch(args);
     }
 }

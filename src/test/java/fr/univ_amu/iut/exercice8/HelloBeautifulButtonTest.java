@@ -50,7 +50,7 @@ public class HelloBeautifulButtonTest extends ApplicationTest {
 
     @Ignore
     @Test
-    public void should_initialize_button_with_text_hello(){
+    public void should_initialize_button_with_text_hello() {
         // then:
         verifyThat("#buttonHello", hasText("Hello !"));
     }
@@ -65,9 +65,9 @@ public class HelloBeautifulButtonTest extends ApplicationTest {
     @Test
     public void should_initialize_stage_with_a_graphic() {
         verifyThat("#buttonHello", (Button node) -> node.getGraphic() instanceof ImageView);
-        verifyThat("#buttonHello", (Button node) -> ((ImageView)node.getGraphic()).getImage()!=null);
-        verifyThat("#buttonHello", (Button node) -> ((ImageView)node.getGraphic()).getImage().getHeight() == 150);
-        verifyThat("#buttonHello", (Button node) -> ((ImageView)node.getGraphic()).getImage().getWidth() == 150);
+        verifyThat("#buttonHello", (Button node) -> ((ImageView) node.getGraphic()).getImage() != null);
+        verifyThat("#buttonHello", (Button node) -> ((ImageView) node.getGraphic()).getImage().getHeight() == 150);
+        verifyThat("#buttonHello", (Button node) -> ((ImageView) node.getGraphic()).getImage().getWidth() == 150);
     }
 
     @Ignore
