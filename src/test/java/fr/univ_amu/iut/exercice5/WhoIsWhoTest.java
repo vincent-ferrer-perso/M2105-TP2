@@ -13,17 +13,17 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
 public class WhoIsWhoTest extends ApplicationTest {
+    private PrintStream out = mock(PrintStream.class);
+
     @BeforeClass
     public static void setUp() throws Exception {
         FxToolkit.registerPrimaryStage();
         FxToolkit.setupApplication(WhoIsWho.class);
     }
 
-    private PrintStream out = mock(PrintStream.class);
-
     @Ignore
     @Test
-    public void test_life_cycle_output(){
+    public void test_life_cycle_output() {
         verify(out).println("[JavaFX Application Thread] constructeur ApplicationLifeCycle()");
         verify(out).println("[JavaFX Application Thread] start()");
     }

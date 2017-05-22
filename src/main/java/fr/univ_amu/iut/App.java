@@ -8,19 +8,10 @@ import javafx.stage.Stage;
 
 /**
  * Hello world!
- *
  */
-public class App extends Application
-{
-    static class AppPane extends BorderPane {
-        private int nbClick = 0;
-
-        AppPane(){
-            Button buttonClick = new Button("Click !");
-            buttonClick.setId("buttonClick");
-            buttonClick.setOnAction( event -> buttonClick.setText(String.valueOf(++nbClick)));
-            this.setCenter(buttonClick);
-        }
+public class App extends Application {
+    public static void main(String[] args) {
+        launch(args);
     }
 
     @Override
@@ -30,8 +21,14 @@ public class App extends Application
         primaryStage.show();
     }
 
-    public static void main( String[] args )
-    {
-        launch(args);
+    static class AppPane extends BorderPane {
+        private int nbClick = 0;
+
+        AppPane() {
+            Button buttonClick = new Button("Click !");
+            buttonClick.setId("buttonClick");
+            buttonClick.setOnAction(event -> buttonClick.setText(String.valueOf(++nbClick)));
+            this.setCenter(buttonClick);
+        }
     }
 }

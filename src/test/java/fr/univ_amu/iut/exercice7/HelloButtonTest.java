@@ -49,7 +49,7 @@ public class HelloButtonTest extends ApplicationTest {
 
     @Ignore
     @Test
-    public void should_initialize_button_with_text_hello(){
+    public void should_initialize_button_with_text_hello() {
         // then:
         verifyThat("#buttonHello", hasText("Hello !"));
     }

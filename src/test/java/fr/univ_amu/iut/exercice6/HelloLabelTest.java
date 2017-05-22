@@ -48,7 +48,7 @@ public class HelloLabelTest extends ApplicationTest {
 
     @Ignore
     @Test
-    public void should_initialize_label_with_text_hello(){
+    public void should_initialize_label_with_text_hello() {
         // then:
         verifyThat("#labelHello", hasText("Hello !"));
     }

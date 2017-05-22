@@ -8,6 +8,12 @@ public class ApplicationLifeCycle extends Application {
     public ApplicationLifeCycle() {
     }
 
+    public static void main(String[] args) {
+        System.out.println("main() : avant launch");
+        launch(args);
+        System.out.println("main() : après launch");
+    }
+
     @Override
     public void init() throws Exception {
 
@@ -21,11 +27,5 @@ public class ApplicationLifeCycle extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-    }
-
-    public static void main(String[] args) {
-        System.out.println("main() : avant launch");
-        launch(args);
-        System.out.println("main() : après launch");
     }
 }

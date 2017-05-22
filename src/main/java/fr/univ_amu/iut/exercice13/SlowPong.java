@@ -57,6 +57,10 @@ public class SlowPong extends Application {
      */
     private boolean movingDown = true;
 
+    private static boolean isInCollisionWith(Circle ball, Rectangle rectangle) {
+        return ball.intersects(rectangle.getBoundsInParent());
+    }
+
     /**
      * Sets the initial starting positions of the ball and paddles
      */
@@ -94,11 +98,6 @@ public class SlowPong extends Application {
     private boolean isEndOfGame() {
         return isInCollisionWith(ball, rightWall) || isInCollisionWith(ball, leftWall);
     }
-
-    private static boolean isInCollisionWith(Circle ball, Rectangle rectangle) {
-        return ball.intersects(rectangle.getBoundsInParent());
-    }
-
 
     @Override
     public void start(Stage stage) {

@@ -27,7 +27,7 @@ public class TestMySecondJavaFXWindow extends ApplicationTest {
     @Test
     public void should_initialize_stage_is_always_on_top() {
         try {
-        assertThat(FxToolkit.registerPrimaryStage().alwaysOnTopProperty().get()).isTrue();
+            assertThat(FxToolkit.registerPrimaryStage().alwaysOnTopProperty().get()).isTrue();
         } catch (TimeoutException e) {
             fail();
         }
