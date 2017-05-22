@@ -273,9 +273,9 @@ avec le mécanisme des écouteurs (`Listener`). Dans les exercices qui suivent n
 implémenter ce mécanisme.
 
 #### Exercice 9
-D'un point de vu purement technique, un `Listener` est un objet qui implémente l'interface 
+D'un point de vue purement technique, un `Listener` est un objet qui implémente l'interface 
 [`EventHandler<T extends Event>`](https://docs.oracle.com/javase/8/javafx/api/javafx/event/EventHandler.html). Cette 
-interface possède une unique méthode appelée `handle()` qui sera appelée lorsque l'un événement sera reçu.
+interface possède une unique méthode appelée `handle()` qui sera appelée lorsqu'un événement se produit.
 
 Pour qu'un *écouteur* soit appelé au bon moment (lorsqu'un événement est déclenché par une action extérieure), il faut 
 qu'il s'enregistre auprès de l'objet qu'il souhaite écouter. Pour la classe `Button`, c'est la méthode `setOnAction()` 
