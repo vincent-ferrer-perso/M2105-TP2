@@ -161,7 +161,9 @@ Allez dans le paquetage `exercice4` et ouvrir la classe `ApplicationLifeCycle`, 
 * ajoutez un constructeur sans paramètre à cette classe, se contentant d'afficher le message "*constructeur ApplicationLifeCycle()*"
 
 * dans `start()` :
-  - ajoutez l'affichage le message "*start()*"
+  - ajoutez l'affichage du message "*start() : avant show stage*" avant l'appel de `show()`
+  
+  - ajoutez l'affichage du message "*start() : après show stage*" après l'appel de `show()`
 
 * redéfinissez la méthode `init()` de la classe `Application`, en se contenant d'afficher le message "*init()*"
 
