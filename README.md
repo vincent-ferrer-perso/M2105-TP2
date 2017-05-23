@@ -335,7 +335,7 @@ EventHandler<ActionEvent> ecouteur = new EventHandler<ActionEvent>() {
 };
 ```
 
-Ouvrez donc la classe `HelloBeatifulUsefulButton` (du paquetage `exercice2`) et implémentez la en respectant les 
+Ouvrez donc la classe `HelloBeatifulUsefulButton` (du paquetage `exercice10`) et implémentez la en respectant les 
 contraintes suivantes :
 
 - L'écouteur d'événement du bouton devra être une classe anonyme qui implémente `EventHandler<ActionEvent>`
