@@ -479,6 +479,11 @@ Vous n'obtiendrez pas exactement le même rendu que l'image de la fenêtre du su
 
 - le texte du bas utilise la police *Tahoma*, de poids (graisse) normal, et de taille 20. Cherchez dans la documentation de `Label` comment préciser la police qui, elle, est obtenue grâce à une méthode statique de la classe `javafx.scene.text.Font` à laquelle on fournit les caractéristiques souhaitées.
 
+#### Variante Exercice 12
+
+Dans cette variante, on vous demande de réaliser la même application (dans un fichier à part du même paquetage) mais de n'utiliser qu'un seul écouteur qui devra examiner la source de l'événement afin d'en déduire le bouton actionné.
+
+
 #### Exercice 13 : Balle rebondissante
 Pour continuer notre tour de JavaFX, nous allons regarder rapidement les possibilités d'animation des IHM avec JavaFX. 
 Une animation est, comme son nom l'indique, un mécanisme qui permet d'animer un objet : le faire se déplacer, le faire 
