@@ -184,7 +184,7 @@ puis que les instructions suivant le `launch()` de la méthode `main()` sont ex�
 Pour terminer l'étude du cycle de vie, intéressons-nous aux "organes" de Java qui animent (exécutent) notre application.
 Pour réaliser certaines tâches, la JVM utilise des *threads*, qui sont des fils d'exécution distincts d'un même processus.
 En général, un *processus* (ou l'un de ses threads) crée des threads pour réaliser des tâches annexes tout en continuant 
-ses propres tâches. Bien que ce soit réducteur, retenons simplement que les thread s'exécutent en parallèle, peuvent se 
+ses propres tâches. Bien que ce soit réducteur, retenons simplement que les threads s'exécutent en parallèle, peuvent se 
 synchroniser, et partagent ensemble la mémoire du processus et ont donc accès aux mêmes objets de l'application.
 
 #### Exercice 5
@@ -199,7 +199,7 @@ Ouvrez la classe ``WhoIsWho``, puis :
 3. préfixez chaque affichage de l'application par la chaîne ``[``*nom*``]`` suivi d'un espace, où *nom* est le nom du 
 thread courant (celui qui fait appel au ``println``).
   
-Éxécutez ensuite l'application pour vérifier quels threads interviennent à quelle étape du cycle de vie de cette si 
+Exécutez ensuite l'application pour vérifier quels threads interviennent à quelle étape du cycle de vie de cette si 
 simple application.
 
 
@@ -264,7 +264,7 @@ respectant les contraintes suivantes :
 - Rendre visible la fenêtre
 
 Exécutez l'application pour vérifier le fonctionnement de cette fenêtre. Comme pour l'exercice précédent, vous devez 
-activer les tests les un après les autres et soumettre votre solution après chaque itération du cycle principal du workflow.
+activer les tests les uns après les autres et soumettre votre solution après chaque itération du cycle principal du workflow.
 
 
 Bien que le bouton soit un peu plus attrayant, il n'est pour l'instant pas très interactif. Généralement, l'utilisateur 
@@ -355,7 +355,7 @@ l'implémentation des interfaces fonctionnelles.
 
 Dit simplement, **une interface fonctionnelle** n’est rien d’autre qu’une interface avec **une seule méthode abstraite**. 
 Et c’est ce qui permet d’implémenter facilement les expressions lambda. Avec l'annotation `@FunctionalInterface`, on 
-indique au compilateur de bien vérifier que l’interface possède bien une seule méthode abstraite. C’est le même principe 
+demande au compilateur de vérifier que l’interface possède bien une seule méthode abstraite. C’est le même principe 
 que l'annotation `@Override`, vue précédemment dans l’implémentation de nos différentes opérations. La seule condition 
 pour que l’affectation d’une expression lambda à une variable (d’une interface fonctionnelle) soit possible est que, 
 la signature de la méthode abstraite de l’interface fonctionnelle doit "matcher" (correspondre à) celle de l’expression 
