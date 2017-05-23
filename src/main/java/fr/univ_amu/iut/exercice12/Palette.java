@@ -19,54 +19,19 @@ public class Palette extends Application {
     private int nbRouge = 0;
     private int nbBleu = 0;
 
-    private Label label = new Label("");
+    private Label label;
 
-    private Button vert = new Button("Vert");
-    private Button rouge = new Button("Rouge");
-    private Button bleu = new Button("Bleu");
+    private Button vert;
+    private Button rouge;
+    private Button bleu;
 
-    private BorderPane root = new BorderPane();
-    private HBox haut = new HBox(10);
-    private Pane panneau = new Pane();
-    private HBox bas = new HBox();
+    private BorderPane root;
+    private HBox haut;
+    private Pane panneau;
+    private HBox bas;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        label.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
-
-        vert.setOnAction(event -> {
-            panneau.setStyle("-fx-background-color: green");
-            label.setText("Vert choisi " + (++nbVert) + " fois");
-        });
-
-        rouge.setOnAction(event -> {
-            panneau.setStyle("-fx-background-color: red");
-            label.setText("Rouge choisi " + (++nbRouge) + " fois");
-        });
-
-        bleu.setOnAction(event -> {
-            panneau.setStyle("-fx-background-color: blue");
-            label.setText("Bleu choisi " + (++nbBleu) + " fois");
-        });
-
-        panneau.setPrefSize(400, 200);
-
-        bas.setAlignment(Pos.CENTER);
-        bas.setPadding(new Insets(10, 5, 10, 5));
-        bas.getChildren().add(label);
-
-        haut.setAlignment(Pos.CENTER);
-        haut.setPadding(new Insets(10, 5, 10, 5));
-        haut.getChildren().addAll(vert, rouge, bleu);
-
-        root.setBottom(bas);
-        root.setTop(haut);
-        root.setCenter(panneau);
-
-        Scene scene = new Scene(root);
-        primaryStage.setScene(scene);
-
-        primaryStage.show();
     }
 }
