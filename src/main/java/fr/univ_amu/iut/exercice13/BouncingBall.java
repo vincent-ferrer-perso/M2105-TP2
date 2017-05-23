@@ -32,46 +32,5 @@ public class BouncingBall extends Application {
     @Override
     public void start(Stage stage) {
 
-        circle = new Circle(200, 10, 10, Color.BLUE);
-
-        transition = new TranslateTransition(new Duration(1000.0), circle);
-        transition.setFromY(10);
-        transition.setToY(400);
-        transition.setAutoReverse(true);
-        transition.setCycleCount(Animation.INDEFINITE);
-        transition.setInterpolator(Interpolator.EASE_BOTH);
-
-        startButton = new Button("Start");
-        startButton.setOnAction(e -> transition.playFromStart());
-
-        pauseButton = new Button("Pause");
-        pauseButton.setOnAction(e -> transition.pause());
-
-        resumeButton = new Button("Resume");
-        resumeButton.setOnAction(e -> transition.play());
-
-        stopButton = new Button("Stop");
-        stopButton.setOnAction(e -> transition.stop());
-
-        commands = new HBox(10,
-                startButton,
-                pauseButton,
-                resumeButton,
-                stopButton);
-        commands.setAlignment(Pos.CENTER);
-
-        slider = new Slider(0.1, 5, 1);
-        slider.valueProperty().addListener((observable, oldValue, newValue) -> transition.setRate(newValue.doubleValue()));
-
-        pane = new Pane(circle);
-
-        root = new VBox(commands, slider, pane);
-        root.setSpacing(20);
-        root.setAlignment(Pos.TOP_CENTER);
-        Scene scene = new Scene(root, 400, 500);
-
-        stage.setScene(scene);
-        stage.setTitle("BouncingBall");
-        stage.show();
     }
 }
