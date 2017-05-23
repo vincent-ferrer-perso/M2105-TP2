@@ -206,6 +206,15 @@ simple application.
 ### Première application graphique : composants et événements
 Maintenant que nous comprenons le cycle de vie d'une application JavaFX, nous allons pouvoir commencer à écrire un 
 premier programme graphique qui se contentera d'afficher un texte au centre de la fenêtre.
+
+Pour placer des composants dans une fenêtre, nous utiliserons principalement le conteneur `BorderPane`.
+Ce conteneur permet de placer des composants enfants dans cinq zones : `Top`, `Bottom`, `Left`, `Right` et `Center`.
+
+Un seul objet `Node` (composant, conteneur, …) peut être placé dans chacun de ces emplacements. Le conteneur `BorderPane` 
+est fréquemment utilisé comme conteneur racine du graphe de scène car il correspond à une division assez classique de la 
+fenêtre principale d'une application (barre de titre, barre d'état, zone d'options, zone principale, etc.).
+
+Le `BorderPane` est l'un des nombreux gestionnaires de disposition de composants disponibles dans Java FX. Ces gestionnaires seront étudiés plus en détail lors du prochain TP.
  
 
 #### Exercice 6
@@ -402,7 +411,7 @@ activer les tests les uns après les autres et soumettre votre solution après c
 
 #### Exercice 12 : La palette de couleurs
 Dans cet exercice, on va commencer à assembler les différentes connaissances acquises jusqu'à présent.
-L'objectif sera de réaliser une fenêtre dont la partie centrale changera de couleurs en fonction des l'actions sur des 
+L'objectif sera de réaliser une fenêtre dont la partie centrale changera de couleur en fonction des actions sur des 
 boutons situés dans la partie supérieure de la fenêtre. La partie basse permettra d'indiquer le nombre de fois où la 
 couleur actuellement affichée aura été utilisée.
 
@@ -410,15 +419,10 @@ Votre fenêtre principale devrait ressembler à cela à la fin de l'exercice :
 
 ![](src/main/resources/assets/palette.png)
 
-La racine de notre graphe de scène sera un objet de la classe `BorderPane`.  Le conteneur `BorderPane` permet de placer 
-les composants enfants dans cinq zones : `Top`, `Bottom`, `Left`, `Right` et `Center`.
-
-Un seul objet `Node` (composant, conteneur, …) peut être placé dans chacun de ces emplacements. Le conteneur `BorderPane` 
-est fréquemment utilisé comme conteneur racine du graphe de scène car il correspond à une division assez classique de la 
-fenêtre principale d'une application (barre de titre, barre d'état, zone d'options, zone principale, etc.).
+La racine de notre graphe de scène sera un objet de la classe `BorderPane`.  
 
 Pour placer plusieurs composants dans les zones du `BorderPane`, il faut y ajouter des nœuds de type conteneur et ajouter 
-ensuite les composants dans ces conteneurs imbriqués.
+ensuite les composants dans ces conteneurs imbriqués. Dans cet exercice, les conteneurs que nous utiliserons en haut et en bas du `BorderPane` sont des `HBox` (un autre gestionnaire de disposition qui place ses composants les uns à la suite des autres horizontalement).
 
 Pour changer la couleur du panneau central, on utilisera le fait que chaque composant JavaFx peut être personnalisé 
 facilement en utilisant des styles CSS. Au lieu d'utiliser une feuille de style complète, on se contentera d'injecter 
@@ -438,7 +442,7 @@ Dans le Paquetage `exercice12`, ouvrir la classe `Palette` et l'implémenter en 
     - un conteneur racine de type `BorderPane`.
     
     - un panneau vide de type `Pane` qui servira de panneau central changeant de couleur en fonction des actions de 
-    l'utilisateurs.
+    l'utilisateur.
     
     - un panneau de type `HBox` pour la barre de boutons.
      
@@ -460,9 +464,14 @@ pour connaitre la méthode à utiliser).
 - Chaque bouton aura un écouteur d'événement associé qui changera la couleur de fond du panneau central, modifiera le 
 nombre d'apparition de la couleur courante et affichera le texte correspondant dans le panel du bas.
 
-- Les différents composants devront être ajouté à leur panneau de destination.
+- Les différents composants devront être ajoutés à leur panneau de destination.
  
 - Les 3 panneaux seront ajoutés au conteneur racine.
+
+##### Remarque
+Vous n'obtiendrez pas exactement la même chose que la fenêtre de la figure qui est un peu plus personnalisée. Une fois l'exercice réalisé et testé, vous pouvez améliorer le rendu avec les éléments suivants :
+  - entre les boutons du haut, il y a un espace de 10 pixels qui peut être précisé lors de la création du `HBox` correspondant
+  - les deux `HBox` sont dotés d'un remplissage (*padding*) de 10 pixels en haut et en bas (et de 5 pixels à droite et à gauche mais ce n'est pas apparent). Trouvez dans la documentation de HBox la méthode qui fixe ce padding, ainsi que l'objet à utiliser pour le représenter.
 
 #### Exercice 13 : Balle rebondissante
 Pour continuer notre tour de JavaFX, nous allons regarder rapidement les possibilités d'animation des IHM avec JavaFX. 
