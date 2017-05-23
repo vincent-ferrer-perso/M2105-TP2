@@ -1,12 +1,12 @@
-package fr.univ_amu.iut.exercice13;
+package fr.univ_amu.iut.exercice14;
 
 import javafx.stage.Stage;
 import org.testfx.framework.junit.ApplicationTest;
 
-public class BouncingBallTest extends ApplicationTest {
+public class SlowPongTest extends ApplicationTest {
 
     @Override
     public void start(Stage stage) throws Exception {
-        new BouncingBall().start(stage);
+        new SlowPong().start(stage);
     }
 }
