@@ -478,5 +478,72 @@ Pour continuer notre tour de JavaFX, nous allons regarder rapidement les possibi
 Une animation est, comme son nom l'indique, un mécanisme qui permet d'animer un objet : le faire se déplacer, le faire 
 tourner, le faire disparaître, le faire grandir, etc... On peut imaginer tout un tas d'animations possibles. Nous allons 
 voir que pour faire une animation, on utilise les propriétés. Ça sera l'occasion de voir que le principe des écouteurs 
-d'événements fonctionne aussi pour être informé des changements de valeurs d'une propriété.
+d'événements fonctionne aussi pour être informé des changements de valeur d'une propriété.
 
+Dans cet exercice, notre objectif va être de simuler une balle rebondissante parfaite (elle rebondira perpétuellement).
+  
+Notre application finale devra ressembler à cela :
+
+![](src/main/resources/assets/BouncingBall.png)
+
+La barre de boutons permettra de lancer, mettre en pause, redémarrer et arrêter l'animation. En dessous, un `slider` 
+permettra de régler le facteur de vitesse de rebondissement de la balle. Le dernier panneau contiendra l'animation de 
+la balle.
+
+Pour rendre la balle, on utilisera un objet du type `Circle`.
+
+L'animation que l'on utilisera sera une simple translation de bas en haut. Pour ce faire nous utiliserons la 
+classe `TranslateTransition`. Cette classe permet de définir l'animation d'un objet en faisant une translation 
+pendant une durée donnée à la construction.
+
+La balle faisant un mouvement vertical de haut en bas, pour définir notre animation, il faudra simplement donner une 
+ordonnée de départ et d'arrivée avec les méthodes `setFromY()` et `setToY()`.
+ 
+Pour que notre balle remonte indéfiniment, il faudra modifier les valeurs des propriétés `autoreverse` et `cycleCount`.
+
+Une fois l'animation crée et correctement configurée, il suffit d'utiliser les méthodes `playFromStart()`, `pause()`, 
+`play()` et `stop()` pour la contrôler.
+
+On utilisera aussi la propriété `Rate` pour accélérer et ralentir la balle avec le slider.
+
+Comme expliqué dans le cours, le mécanisme des propriétés permet d'être informé d'un changement de valeur d'une donnée 
+membre. Ce mécanisme se base sur les écouteurs (exactement comme les boutons). Dans notre cas, nous souhaitons changer 
+le `Rate` à chaque changement de la propriété `value` du slider. Cela pourrait se faire de la manière suivante :
+```java
+slider.valueProperty().addListener(
+        (observable, oldValue, newValue) -> transition.setRate(newValue.doubleValue())
+        );
+```
+
+Dans le Paquetage `exercice13`, ouvrir la classe `BouncingBall` et l'implémenter en respectant les consignes suivantes :
+
+- La classe devra posséder les données membres suivantes : 
+    - un conteneur racine de type `VBox`
+    
+    - un panneau vide de type `Pane` qui servira de zone d'animation
+    
+    - un panneau de type `HBox` pour la barre de boutons.
+    
+    - quatre `Button` qui permettront de contrôler l'animation
+    
+    - un slider pour contrôler la vitesse
+    
+    - un cercle pour représenter la balle
+    
+    - Un objet du type `TranslateTransition`
+- Pour vous simplifier la vie, vous pouvez instancier toutes les données membres lors de leur déclaration.
+
+- Configurer votre animation pour que votre balle démarre à l'ordonnée 10 et termine à 400. Par défaut régler la durée à *1s*.
+
+- Ajouter les boutons à la `HBox`.
+
+- Chaque bouton aura un écouteur d'événement associé qui appellera la méthode de contrôle de l'animation correspondant à son nom.
+
+- Régler le slider pour qu'il prenne des valeurs allant de 0,1 à 5.
+
+- Ajouter un écouteur sur la propriété `value` pour que la vitesse de votre animation varie en fonction de la position. 
+du curseur du slider.
+
+- Ajouter la balle dans le `Pane`.
+
+- Ajouter la `HBox`, le `Slider` et le `Pane` comme enfants du conteneur principal.
