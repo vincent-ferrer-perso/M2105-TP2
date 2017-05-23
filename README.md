@@ -501,7 +501,7 @@ La barre de boutons permettra de lancer, mettre en pause, redémarrer et arrête
 permettra de régler le facteur de vitesse de rebondissement de la balle. Le dernier panneau contiendra l'animation de 
 la balle.
 
-Pour rendre la balle, on utilisera un objet du type `Circle`.
+Pour déssiner la balle, on utilisera un objet du type `Circle`.
 
 L'animation que l'on utilisera sera une simple translation de bas en haut. Pour ce faire nous utiliserons la 
 classe `TranslateTransition`. Cette classe permet de définir l'animation d'un objet en faisant une translation 
@@ -512,7 +512,7 @@ ordonnée de départ et d'arrivée avec les méthodes `setFromY()` et `setToY()`
  
 Pour que notre balle remonte indéfiniment, il faudra modifier les valeurs des propriétés `autoreverse` et `cycleCount`.
 
-Une fois l'animation crée et correctement configurée, il suffit d'utiliser les méthodes `playFromStart()`, `pause()`, 
+Une fois l'animation créée et correctement configurée, il suffit d'utiliser les méthodes `playFromStart()`, `pause()`, 
 `play()` et `stop()` pour la contrôler.
 
 On utilisera aussi la propriété `Rate` pour accélérer et ralentir la balle avec le slider.
@@ -533,7 +533,7 @@ Dans le Paquetage `exercice13`, ouvrir la classe `BouncingBall` et l'implémente
     
     - un panneau vide de type `Pane` qui servira de zone d'animation
     
-    - un panneau de type `HBox` pour la barre de boutons.
+    - un panneau de type `HBox` pour la barre de boutons
     
     - quatre `Button` qui permettront de contrôler l'animation
     
@@ -544,7 +544,7 @@ Dans le Paquetage `exercice13`, ouvrir la classe `BouncingBall` et l'implémente
     - Un objet du type `TranslateTransition`
 - Pour vous simplifier la vie, vous pouvez instancier toutes les données membres lors de leur déclaration.
 
-- Configurer votre animation pour que votre balle démarre à l'ordonnée 10 et termine à 400. Par défaut régler la durée à *1s*.
+- Configurer votre animation pour que votre balle démarre à l'ordonnée 10 et termine à 400. Par défaut régler la durée à *1s* (soit *1000 milli-secondes*).
 
 - Ajouter les boutons à la `HBox`.
 
@@ -552,8 +552,7 @@ Dans le Paquetage `exercice13`, ouvrir la classe `BouncingBall` et l'implémente
 
 - Régler le slider pour qu'il prenne des valeurs allant de 0,1 à 5.
 
-- Ajouter un écouteur sur la propriété `value` pour que la vitesse de votre animation varie en fonction de la position. 
-du curseur du slider.
+- Ajouter un écouteur sur la propriété `value` pour que la vitesse de votre animation varie en fonction de la position du curseur du slider.
 
 - Ajouter la balle dans le `Pane`.
 
