@@ -398,4 +398,70 @@ Exécutez l'application pour vérifier le fonctionnement de cette fenêtre. Comm
 activer les tests les uns après les autres et soumettre votre solution après chaque itération du cycle principal du workflow.
 
 
-### Sujets complémentaires : Animations, Gestionnaire de positionnement et dessin
+### Sujets complémentaires : Animations, gestionnaires de positionnement et dessin
+
+#### Exercice 12 : La palette de couleurs
+Dans cet exercice, on va commencer à assembler les différentes connaissances acquises jusqu'à présent.
+L'objectif sera de réaliser une fenêtre dont la partie centrale changera de couleurs en fonction des l'actions sur des 
+boutons situés dans la partie supérieure de la fenêtre. La partie basse permettra d'indiquer le nombre de fois où la 
+couleur actuellement affichée aura été utilisée.
+
+Votre fenêtre principale devrait ressembler à cela à la fin de l'exercice :
+
+![](src/main/resources/assets/palette.png)
+
+La racine de notre graphe de scène sera un objet de la classe `BorderPane`.  Le conteneur `BorderPane` permet de placer 
+les composants enfants dans cinq zones : `Top`, `Bottom`, `Left`, `Right` et `Center`.
+
+Un seul objet `Node` (composant, conteneur, …) peut être placé dans chacun de ces emplacements. Le conteneur `BorderPane` 
+est fréquemment utilisé comme conteneur racine du graphe de scène car il correspond à une division assez classique de la 
+fenêtre principale d'une application (barre de titre, barre d'état, zone d'options, zone principale, etc.).
+
+Pour placer plusieurs composants dans les zones du `BorderPane`, il faut y ajouter des nœuds de type conteneur et ajouter 
+ensuite les composants dans ces conteneurs imbriqués.
+
+Pour changer la couleur du panneau central, on utilisera le fait que chaque composant JavaFx peut être personnalisé 
+facilement en utilisant des styles CSS. Au lieu d'utiliser une feuille de style complète, on se contentera d'injecter 
+le style adapté directement dans le panneau avec l'utilisation de la méthode `setStyle()`.
+
+Voici un exemple de changement de couleur de fond similaire à celui que vous devrez faire dans les écouteurs de vos boutons :
+
+```java
+Pane panneau = new Pane();
+panneau.setStyle("-fx-background-color: white");
+```
+
+Dans le Paquetage `exercice12`, ouvrir la classe `Palette` et l'implémenter en respectant les consignes suivantes :
+
+- La classe devra posséder les données membres suivantes : 
+
+    - un conteneur racine de type `BorderPane`.
+    
+    - un panneau vide de type `Pane` qui servira de panneau central changeant de couleur en fonction des actions de 
+    l'utilisateurs.
+    
+    - un panneau de type `HBox` pour la barre de boutons.
+     
+    - un autre panneau de type `HBox` pour la barre d'état affichant le nombre d'apparition de la couleur courante.
+
+    - un libellé de type `Label` qui servira à afficher le nombre de fois ou la couleur courante a été choisie. 
+
+    - trois `Button` qui permettront de choisir la couleur du panel central.
+    
+    - en plus de ces différents noeuds, il faudra aussi 3 entiers pour conserver le nombre d'apparition de chaque couleur.
+
+- Pour vous simplifier la vie, vous pouvez instancier toutes les données membres lors de leur déclaration.
+
+- Le panneau central doit avoir une taille préférée de 400 par 200 (regarder dans la documentation de la classe `Pane` 
+pour connaitre la méthode à utiliser).
+
+- Les deux `HBox` doivent être alignées au centre (regarder dans la documentation de la classe `HBox`)
+
+- Chaque bouton aura un écouteur d'événement associé qui changera la couleur de fond du panneau central, modifiera le 
+nombre d'apparition de la couleur courante et affichera le texte correspondant dans le panel du bas.
+
+- Les différents composants devront être ajouté à leur panneau de destination.
+ 
+- Les 3 panneaux seront ajoutés au conteneur racine.
+
+#### Exercice 13 : Balle rebondissante
