@@ -465,3 +465,9 @@ nombre d'apparition de la couleur courante et affichera le texte correspondant d
 - Les 3 panneaux seront ajoutés au conteneur racine.
 
 #### Exercice 13 : Balle rebondissante
+Pour continuer notre tour de JavaFX, nous allons regarder rapidement les possibilités d'animation des IHM avec JavaFX. 
+Une animation est, comme son nom l'indique, un mécanisme qui permet d'animer un objet : le faire se déplacer, le faire 
+tourner, le faire disparaître, le faire grandir, etc... On peut imaginer tout un tas d'animations possibles. Nous allons 
+voir que pour faire une animation, on utilise les propriétés. Ça sera l'occasion de voir que le principe des écouteurs 
+d'événements fonctionne aussi pour être informé des changements de valeurs d'une propriété.
+
