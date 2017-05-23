@@ -1,4 +1,4 @@
-package fr.univ_amu.iut.exercice13;
+package fr.univ_amu.iut.exercice14;
 
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
@@ -30,6 +30,5 @@ public class Paddle extends Rectangle {
         paddleY.addListener((observable, oldValue, newValue) -> translateYProperty().setValue(newValue));
         paddleY.setValue(235);
 
-        //translateYProperty().bind(paddleY);
     }
 }

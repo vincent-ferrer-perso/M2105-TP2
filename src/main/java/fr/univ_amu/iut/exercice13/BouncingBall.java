@@ -1,4 +1,4 @@
-package fr.univ_amu.iut.exercice12;
+package fr.univ_amu.iut.exercice13;
 
 import javafx.animation.Animation;
 import javafx.animation.Interpolator;
@@ -22,50 +22,50 @@ public class BouncingBall extends Application {
     private Button pauseButton;
     private Button resumeButton;
     private Button stopButton;
+    private Slider slider;
     private Circle circle;
-
-    public static void main(String[] args) {
-        Application.launch(args);
-    }
+    private VBox root;
+    private HBox commands;
+    private TranslateTransition transition;
 
     @Override
     public void start(Stage stage) {
 
         circle = new Circle(200, 10, 10, Color.BLUE);
 
-        TranslateTransition anim = new TranslateTransition(new Duration(1000.0), circle);
-
-        anim.setFromY(10);
-        anim.setToY(400);
-        anim.setAutoReverse(true);
-        anim.setCycleCount(Animation.INDEFINITE);
-        anim.setInterpolator(Interpolator.EASE_BOTH);
+        transition = new TranslateTransition(new Duration(1000.0), circle);
+        transition.setFromY(10);
+        transition.setToY(400);
+        transition.setAutoReverse(true);
+        transition.setCycleCount(Animation.INDEFINITE);
+        transition.setInterpolator(Interpolator.EASE_BOTH);
 
         startButton = new Button("Start");
-        startButton.setOnAction(e -> anim.playFromStart());
+        startButton.setOnAction(e -> transition.playFromStart());
 
         pauseButton = new Button("Pause");
-        pauseButton.setOnAction(e -> anim.pause());
+        pauseButton.setOnAction(e -> transition.pause());
 
         resumeButton = new Button("Resume");
-        resumeButton.setOnAction(e -> anim.play());
+        resumeButton.setOnAction(e -> transition.play());
 
         stopButton = new Button("Stop");
-        stopButton.setOnAction(e -> anim.stop());
+        stopButton.setOnAction(e -> transition.stop());
 
-        HBox commands = new HBox(10,
+        commands = new HBox(10,
                 startButton,
                 pauseButton,
                 resumeButton,
                 stopButton);
         commands.setAlignment(Pos.CENTER);
 
-        Slider slider = new Slider(0.1, 5, 1);
-        slider.valueProperty().addListener((observable, oldValue, newValue) -> anim.setRate(newValue.doubleValue()));
+        slider = new Slider(0.1, 5, 1);
+        slider.valueProperty().addListener((observable, oldValue, newValue) -> transition.setRate(newValue.doubleValue()));
 
-        VBox root = new VBox(commands, slider, new Pane(circle));
+        root = new VBox(commands, slider, new Pane(circle));
+        root.setSpacing(20);
         root.setAlignment(Pos.TOP_CENTER);
-        Scene scene = new Scene(root, 400, 450);
+        Scene scene = new Scene(root, 400, 500);
 
         stage.setScene(scene);
         stage.setTitle("BouncingBall");

@@ -1,4 +1,4 @@
-package fr.univ_amu.iut.exercice13;
+package fr.univ_amu.iut.exercice14;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
