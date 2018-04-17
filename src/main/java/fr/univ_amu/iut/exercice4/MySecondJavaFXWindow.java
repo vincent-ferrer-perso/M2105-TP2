@@ -1,9 +1,9 @@
-package fr.univ_amu.iut.exercice3;
+package fr.univ_amu.iut.exercice4;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
 
-public class MyUndecoratedJavaFXWindow extends Application {
+public class MySecondJavaFXWindow extends Application {
 
     public static void main(String[] args) {
         launch(args);

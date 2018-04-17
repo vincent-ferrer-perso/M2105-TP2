@@ -1,6 +1,7 @@
-package fr.univ_amu.iut.exercice7;
+package fr.univ_amu.iut.exercice8;
 
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -15,7 +16,7 @@ import static org.testfx.api.FxAssert.verifyThat;
 import static org.testfx.util.NodeQueryUtils.hasText;
 
 
-public class HelloButtonTest extends ApplicationTest {
+public class TestHelloBeautifulButton extends ApplicationTest {
 
     @Ignore
     @Test
@@ -29,9 +30,9 @@ public class HelloButtonTest extends ApplicationTest {
 
     @Ignore
     @Test
-    public void should_initialize_stage_with_height_of_100() {
+    public void should_initialize_stage_with_height_of_250() {
         try {
-            assertThat(FxToolkit.registerPrimaryStage().getHeight()).isEqualTo(100);
+            assertThat(FxToolkit.registerPrimaryStage().getHeight()).isEqualTo(250);
         } catch (TimeoutException e) {
             fail();
         }
@@ -56,6 +57,21 @@ public class HelloButtonTest extends ApplicationTest {
 
     @Ignore
     @Test
+    public void should_initialize_stage_with_useless_button() {
+        verifyThat("#buttonHello", (Button node) -> node.getOnAction() == null);
+    }
+
+    @Ignore
+    @Test
+    public void should_initialize_stage_with_a_graphic() {
+        verifyThat("#buttonHello", (Button node) -> node.getGraphic() instanceof ImageView);
+        verifyThat("#buttonHello", (Button node) -> ((ImageView) node.getGraphic()).getImage() != null);
+        verifyThat("#buttonHello", (Button node) -> ((ImageView) node.getGraphic()).getImage().getHeight() == 150);
+        verifyThat("#buttonHello", (Button node) -> ((ImageView) node.getGraphic()).getImage().getWidth() == 150);
+    }
+
+    @Ignore
+    @Test
     public void should_initialize_stage_is_showing() {
         try {
             assertThat(FxToolkit.registerPrimaryStage().isShowing()).isTrue();
@@ -64,14 +80,8 @@ public class HelloButtonTest extends ApplicationTest {
         }
     }
 
-    @Ignore
-    @Test
-    public void should_initialize_stage_with_useless_button() {
-        verifyThat("#buttonHello", (Button node) -> node.getOnAction() == null);
-    }
-
     @Override
     public void start(Stage stage) throws Exception {
-        new HelloButton().start(stage);
+        new HelloBeautifulButton().start(stage);
     }
 }

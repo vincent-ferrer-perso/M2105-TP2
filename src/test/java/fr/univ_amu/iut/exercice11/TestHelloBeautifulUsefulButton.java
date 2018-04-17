@@ -20,7 +20,7 @@ import static org.testfx.api.FxAssert.verifyThat;
 import static org.testfx.util.NodeQueryUtils.hasText;
 
 
-public class HelloBeautifulUsefulButtonTest extends ApplicationTest {
+public class TestHelloBeautifulUsefulButton extends ApplicationTest {
 
     @Ignore
     @Test

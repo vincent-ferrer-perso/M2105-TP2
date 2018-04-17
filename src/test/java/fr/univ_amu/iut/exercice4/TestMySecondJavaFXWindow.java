@@ -1,7 +1,6 @@
-package fr.univ_amu.iut.exercice3;
+package fr.univ_amu.iut.exercice4;
 
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.testfx.api.FxToolkit;
@@ -12,23 +11,13 @@ import java.util.concurrent.TimeoutException;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.fail;
 
-public class TestMyUndecoratedJavaFXWindow extends ApplicationTest {
-
-    @Ignore
-    @Test
-    public void should_initialize_stage_is_not_showing() {
-        try {
-            assertThat(FxToolkit.registerPrimaryStage().isShowing()).isFalse();
-        } catch (TimeoutException e) {
-            fail();
-        }
-    }
+public class TestMySecondJavaFXWindow extends ApplicationTest {
 
     @Ignore
     @Test
     public void should_initialize_stage_with_correct_title() {
         try {
-            assertThat(FxToolkit.registerPrimaryStage().getTitle()).isEqualTo("Undecorated Useless JavaFX Window");
+            assertThat(FxToolkit.registerPrimaryStage().getTitle()).isEqualTo("Second Useless JavaFX Window");
         } catch (TimeoutException e) {
             fail();
         }
@@ -76,9 +65,9 @@ public class TestMyUndecoratedJavaFXWindow extends ApplicationTest {
 
     @Ignore
     @Test
-    public void should_initialize_stage_is_undecorated() {
+    public void should_initialize_stage_is_showing() {
         try {
-            assertThat(FxToolkit.registerPrimaryStage().getStyle()).isEqualTo(StageStyle.UNDECORATED);
+            assertThat(FxToolkit.registerPrimaryStage().isShowing()).isTrue();
         } catch (TimeoutException e) {
             fail();
         }
@@ -86,7 +75,6 @@ public class TestMyUndecoratedJavaFXWindow extends ApplicationTest {
 
     @Override
     public void start(Stage stage) throws Exception {
-        new MyUndecoratedJavaFXWindow().start(stage);
+        new MySecondJavaFXWindow().start(stage);
     }
-
 }

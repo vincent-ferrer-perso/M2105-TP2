@@ -1,4 +1,4 @@
-package fr.univ_amu.iut.exercice5;
+package fr.univ_amu.iut.exercice3;
 
 import javafx.stage.Stage;
 import org.junit.BeforeClass;
@@ -12,7 +12,7 @@ import java.io.PrintStream;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
-public class WhoIsWhoTest extends ApplicationTest {
+public class TestWhoIsWho extends ApplicationTest {
     private PrintStream out = mock(PrintStream.class);
 
     @BeforeClass

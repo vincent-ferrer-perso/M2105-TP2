@@ -1,12 +1,12 @@
-package fr.univ_amu.iut.exercice12;
+package fr.univ_amu.iut.exercice13;
 
 import javafx.stage.Stage;
 import org.testfx.framework.junit.ApplicationTest;
 
-public class PaletteTest extends ApplicationTest {
+public class TestBouncingBall extends ApplicationTest {
 
     @Override
     public void start(Stage stage) throws Exception {
-        new Palette().start(stage);
+        new BouncingBall().start(stage);
     }
 }

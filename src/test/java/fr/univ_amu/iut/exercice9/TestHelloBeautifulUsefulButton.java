@@ -1,4 +1,4 @@
-package fr.univ_amu.iut.exercice10;
+package fr.univ_amu.iut.exercice9;
 
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
@@ -19,7 +19,7 @@ import static org.testfx.api.FxAssert.verifyThat;
 import static org.testfx.util.NodeQueryUtils.hasText;
 
 
-public class HelloBeautifulUsefulButtonTest extends ApplicationTest {
+public class TestHelloBeautifulUsefulButton extends ApplicationTest {
 
     @Ignore
     @Test
@@ -77,22 +77,7 @@ public class HelloBeautifulUsefulButtonTest extends ApplicationTest {
         clickOn("#buttonHello");
 
         // then:
-        verify(out).println("Bouton actionné 1 fois");
-    }
-
-    @Ignore
-    @Test
-    public void should_button_multiple_click_show_useless_text() {
-        PrintStream out = mock(PrintStream.class);
-        System.setOut(out);
-
-        // when:
-        clickOn("#buttonHello");
-        clickOn("#buttonHello");
-        clickOn("#buttonHello");
-
-        // then:
-        verify(out).println("Bouton actionné 3 fois");
+        verify(out).println("Bouton actionné");
     }
 
     @Ignore

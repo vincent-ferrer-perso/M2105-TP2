@@ -1,6 +1,6 @@
-package fr.univ_amu.iut.exercice4;
+package fr.univ_amu.iut.exercice2;
 
-import fr.univ_amu.iut.exercice5.WhoIsWho;
+import fr.univ_amu.iut.exercice3.WhoIsWho;
 import javafx.stage.Stage;
 import org.junit.BeforeClass;
 import org.junit.Ignore;

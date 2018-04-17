@@ -4,10 +4,10 @@
 
 * **Cours:** [M2105](http://cache.media.enseignementsup-recherche.gouv.fr/file/25/09/7/PPN_INFORMATIQUE_256097.pdf)
 * **Responsable:** [Sébastien NEDJAR](mailto:sebastien.nedjar@univ-amu.fr)
-* **Enseignants:** [Sébastien NEDJAR](mailto:sebastien.nedjar@univ-amu.fr), [Cyril Pain-Barre](mailto:cyril.pain-barre@univ-amu.fr)
+* **Enseignants:** [Sébastien NEDJAR](mailto:sebastien.nedjar@univ-amu.fr), [Petru Valicov](mailto:petru.valicov@univ-amu.fr), [Cyril Pain-Barre](mailto:cyril.pain-barre@univ-amu.fr)
 * **Besoin d'aide ?**
-    * La page [Piazza de ce cours](https://piazza.com/univ-amu.fr/spring2017/m2105/home).
-    * Consulter et/ou créér des [issues](https://github.com/IUTInfoAix-M2105/tp1/issues).
+    * La page [Piazza de ce cours](https://piazza.com/univ-amu.fr/spring2018/m2105/home).
+    * Consulter et/ou créér des [issues](https://github.com/IUTInfoAix-M2105/tp2/issues).
     * [Email](mailto:sebastien.nedjar@univ-amu.fr) pour une question d'ordre privée, ou pour convenir d'un rendez-vous physique.
 
 ## TP 2 : Premiers pas avec JavaFX 8.0 [![Build Status](https://travis-ci.com/IUTInfoAix-M2105/tp2.svg?token=zPXgu159amQhEb4ShTxW)](https://travis-ci.com/IUTInfoAix-M2105/tp2)
@@ -98,32 +98,6 @@ les parties *Methods inherited from ...*.
 Pour valider cet exercice, supprimez l'annotation `@Ignore` dans la classe `TestMyFirstJavaFXWindow` et lancez les tests 
 pour vérifier que tout est correct.
 
-#### Exercice 2
-Pour commencer cet exercice, ouvrez la classe `MySecondJavaFxWindow` du paquetage `exercice2`. Dans la méthode `start()` 
-de cette classe, modifiez le titre de la fenêtre en "*Second Useless JavaFX Window*" puis 
-ajoutez les instructions pour  que votre fenêtre respecte les contraintes suivantes :
-* Être toujours placée au premier plan et ne pas être redimensionnable (cherchez dans la documentation des méthodes de ``Stage``),
-* Avoir une largeur fixée à 800 pixels et une hauteur fixée à 400 pixels (cherchez dans les méthodes de ``Window``).
-
-Terminez par l'ajout d'un appel à la méthode `show()` pour afficher la fenêtre.
-
-Exécutez l'application pour vérifier les conséquences de vos modifications. Comme pour l'exercice précédent, vous devez 
-activer les tests les un après les autres et soumettre votre solution après chaque itération du cycle principal du workflow.
-
-##### Remarque
-La taille de la fenêtre se définit rarement directement comme dans cet exercice. En général, on la laisse s'adapter à la 
-**scène** qu'elle contient. Elle-même pourra avoir une taille fixée, ou calculée en fonction de son contenu. 
-
-#### Exercice 3
-
-Modifiez le code de l'application qui vous est donné de manière à changer le style de la fenêtre pour qu'elle ne soit 
-pas décorée. Ajoutez les propriétés que les test vous imposent pour être totalement validées.
-
-Puisqu'elle n'est plus décorée, la fenêtre qui s'affiche ne dispose plus du bouton permettant de terminer l'application !
-Néanmoins, sur un bureau comme le vôtre qui dispose d'une barre de tâches, un simple clic droit sur l'icône 
-correspondante nous donne accès à un menu contextuel permettant de la fermer. Un autre moyen est de cliquer sur le carré 
-rouge de la partie *Run:* en bas à gauche de la fenêtre IntelliJ, aussi présent en haut à droite.
-
 ### Cycle de vie d'une application
 
 Étudions rapidement le cycle de vie d'une application JavaFX (déjà présenté en cours magistral, et figurant dans la 
@@ -155,9 +129,9 @@ Sans (trop) rentrer dans les détails, ``System.out`` est une instance de la cla
 de nombreuses méthodes d'écriture dans un flux parmi lesquelles plusieurs déclinaisons de la méthode ``println()`` dont 
 celle prenant un ``String`` en paramètre.
 
-#### Exercice 4
+#### Exercice 2
 
-Allez dans le paquetage `exercice4` et ouvrir la classe `ApplicationLifeCycle`, puis :
+Allez dans le paquetage `exercice2` et ouvrir la classe `ApplicationLifeCycle`, puis :
 * ajoutez un constructeur sans paramètre à cette classe, se contentant d'afficher le message "*constructeur ApplicationLifeCycle()*"
 
 * dans `start()` :
@@ -189,7 +163,7 @@ En général, un *processus* (ou l'un de ses threads) crée des threads pour ré
 ses propres tâches. Bien que ce soit réducteur, retenons simplement que les threads s'exécutent en parallèle, peuvent se 
 synchroniser, et partagent ensemble la mémoire du processus et ont donc accès aux mêmes objets de l'application.
 
-#### Exercice 5
+#### Exercice 3
 
 Ouvrez la classe ``WhoIsWho``, puis :
 1. ouvrez la documentation de la classe `Thread` de Java8, qui est la super classe des threads de la JVM, et recherchez-y :
@@ -205,9 +179,35 @@ Exécutez ensuite l'application pour vérifier quels threads interviennent à qu
 simple application.
 
 
-### Première application graphique : composants et événements
+### Premières applications graphiques : composants et événements
 Maintenant que nous comprenons le cycle de vie d'une application JavaFX, nous allons pouvoir commencer à écrire un 
-premier programme graphique qui se contentera d'afficher un texte au centre de la fenêtre.
+second programme graphique qui ne sera qu'une personnalisation de l'exercice 1.
+
+#### Exercice 4
+Pour commencer cet exercice, ouvrez la classe `MySecondJavaFxWindow` du paquetage `exercice4`. Dans la méthode `start()` 
+de cette classe, modifiez le titre de la fenêtre en "*Second Useless JavaFX Window*" puis 
+ajoutez les instructions pour  que votre fenêtre respecte les contraintes suivantes :
+* Être toujours placée au premier plan et ne pas être redimensionnable (cherchez dans la documentation des méthodes de ``Stage``),
+* Avoir une largeur fixée à 800 pixels et une hauteur fixée à 400 pixels (cherchez dans les méthodes de ``Window``).
+
+Terminez par l'ajout d'un appel à la méthode `show()` pour afficher la fenêtre.
+
+Exécutez l'application pour vérifier les conséquences de vos modifications. Comme pour l'exercice précédent, vous devez 
+activer les tests les un après les autres et soumettre votre solution après chaque itération du cycle principal du workflow.
+
+##### Remarque
+La taille de la fenêtre se définit rarement directement comme dans cet exercice. En général, on la laisse s'adapter à la 
+**scène** qu'elle contient. Elle-même pourra avoir une taille fixée, ou calculée en fonction de son contenu. 
+
+#### Exercice 5
+
+Modifiez le code de l'application qui vous est donné de manière à changer le style de la fenêtre pour qu'elle ne soit 
+pas décorée. Ajoutez les propriétés que les test vous imposent pour être totalement validées.
+
+Puisqu'elle n'est plus décorée, la fenêtre qui s'affiche ne dispose plus du bouton permettant de terminer l'application !
+Néanmoins, sur un bureau comme le vôtre qui dispose d'une barre de tâches, un simple clic droit sur l'icône 
+correspondante nous donne accès à un menu contextuel permettant de la fermer. Un autre moyen est de cliquer sur le carré 
+rouge de la partie *Run:* en bas à gauche de la fenêtre IntelliJ, aussi présent en haut à droite.
 
 Pour placer des composants dans une fenêtre, nous utiliserons principalement le conteneur `BorderPane`.
 Ce conteneur permet de placer des composants enfants dans cinq zones : `Top`, `Bottom`, `Left`, `Right` et `Center`.
