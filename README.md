@@ -100,7 +100,7 @@ pour vérifier que tout est correct.
 
 ### Cycle de vie d'une application
 
-Étudions rapidement le cycle de vie d'une application JavaFX (déjà présenté en cours magistral, et figurant dans la 
+Étudions rapidement le cycle de vie d'une application JavaFX (figurant dans la 
 documentation de la classe `Application`).
 
 Pour rappel, la méthode statique `launch()` effectue dans l'ordre les opérations suivantes :
@@ -170,7 +170,7 @@ Ouvrez la classe ``WhoIsWho``, puis :
     * la méthode statique qui renvoie le `Thread` courant,
     * la méthode d'instance qui renvoie un `String` contenant le nom du thread (oui, ils ont un petit nom)
 
-2. faites en sorte que chaque méthode du cycle de vie ait un affichage identique à celui de l'exercice 4. 
+2. faites en sorte que chaque méthode du cycle de vie ait un affichage identique à celui de l'exercice 2. 
 
 3. préfixez chaque affichage de l'application par la chaîne ``[``*nom*``]`` suivi d'un espace, où *nom* est le nom du 
 thread courant (celui qui fait appel au ``println``).
