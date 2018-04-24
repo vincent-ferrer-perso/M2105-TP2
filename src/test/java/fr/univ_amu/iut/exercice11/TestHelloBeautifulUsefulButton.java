@@ -1,6 +1,6 @@
 package fr.univ_amu.iut.exercice11;
 
-import fr.univ_amu.iut.exercice10.HelloBeautifulUsefulButton;
+import fr.univ_amu.iut.exercice11.HelloBeautifulUsefulButton;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
