@@ -11,6 +11,11 @@ public class MyUndecoratedJavaFXWindow extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-
+        primaryStage.setTitle("Undecorated Useless JavaFX Window");
+        primaryStage.setAlwaysOnTop(true);
+        primaryStage.setResizable(false);
+        primaryStage.setHeight(400);
+        primaryStage.setWidth(800);
+        primaryStage.setIconified(true);
     }
 }

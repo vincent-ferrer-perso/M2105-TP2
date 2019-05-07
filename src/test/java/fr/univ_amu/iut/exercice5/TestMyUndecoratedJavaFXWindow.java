@@ -14,7 +14,7 @@ import static org.junit.Assert.fail;
 
 public class TestMyUndecoratedJavaFXWindow extends ApplicationTest {
 
-    @Ignore
+
     @Test
     public void should_initialize_stage_is_not_showing() {
         try {
@@ -24,7 +24,7 @@ public class TestMyUndecoratedJavaFXWindow extends ApplicationTest {
         }
     }
 
-    @Ignore
+
     @Test
     public void should_initialize_stage_with_correct_title() {
         try {
@@ -34,7 +34,7 @@ public class TestMyUndecoratedJavaFXWindow extends ApplicationTest {
         }
     }
 
-    @Ignore
+
     @Test
     public void should_initialize_stage_is_always_on_top() {
         try {
@@ -44,7 +44,7 @@ public class TestMyUndecoratedJavaFXWindow extends ApplicationTest {
         }
     }
 
-    @Ignore
+
     @Test
     public void should_initialize_stage_is_not_resizable() {
         try {
@@ -54,7 +54,7 @@ public class TestMyUndecoratedJavaFXWindow extends ApplicationTest {
         }
     }
 
-    @Ignore
+
     @Test
     public void should_initialize_stage_with_height_of_400() {
         try {
@@ -64,7 +64,7 @@ public class TestMyUndecoratedJavaFXWindow extends ApplicationTest {
         }
     }
 
-    @Ignore
+
     @Test
     public void should_initialize_stage_with_width_of_800() {
         try {
@@ -74,7 +74,7 @@ public class TestMyUndecoratedJavaFXWindow extends ApplicationTest {
         }
     }
 
-    @Ignore
+
     @Test
     public void should_initialize_stage_is_undecorated() {
         try {
