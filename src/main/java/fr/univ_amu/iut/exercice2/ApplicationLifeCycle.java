@@ -6,6 +6,7 @@ import javafx.stage.Stage;
 public class ApplicationLifeCycle extends Application {
 
     public ApplicationLifeCycle() {
+        System.out.println("constructeur ApplicationLifeCycle()");
     }
 
     public static void main(String[] args) {
@@ -15,17 +16,20 @@ public class ApplicationLifeCycle extends Application {
     }
 
     @Override
-    public void init() throws Exception {
-
+    public void init() throws Exception{
+        System.out.println("init()");
     }
 
     @Override
-    public void stop() throws Exception {
-
+    public void stop() throws Exception{
+        System.out.println("stop()");
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        System.out.println("start() : avant show stage");
+        primaryStage.show();
+        System.out.println("start() : après show stage");
 
     }
 }

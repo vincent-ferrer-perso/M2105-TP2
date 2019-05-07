@@ -23,7 +23,7 @@ public class TestApplicationLifeCycle extends ApplicationTest {
         FxToolkit.setupApplication(WhoIsWho.class);
     }
 
-    @Ignore
+
     @Test
     public void constructor() throws Exception {
         PrintStream out = mock(PrintStream.class);
@@ -33,7 +33,7 @@ public class TestApplicationLifeCycle extends ApplicationTest {
     }
 
 
-    @Ignore
+
     @Test
     public void init() throws Exception {
         PrintStream out = mock(PrintStream.class);
@@ -42,7 +42,7 @@ public class TestApplicationLifeCycle extends ApplicationTest {
         verify(out).println("init()");
     }
 
-    @Ignore
+
     @Test
     public void stop() throws Exception {
         PrintStream out = mock(PrintStream.class);
@@ -51,7 +51,7 @@ public class TestApplicationLifeCycle extends ApplicationTest {
         verify(out).println("stop()");
     }
 
-    @Ignore
+
     @Test
     public void test_life_cycle_output() {
         verify(out).println("constructeur ApplicationLifeCycle()");

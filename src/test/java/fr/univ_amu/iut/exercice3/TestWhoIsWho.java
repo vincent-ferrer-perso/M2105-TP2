@@ -21,7 +21,7 @@ public class TestWhoIsWho extends ApplicationTest {
         FxToolkit.setupApplication(WhoIsWho.class);
     }
 
-    @Ignore
+
     @Test
     public void test_life_cycle_output() {
         verify(out).println("[JavaFX Application Thread] constructeur WhoIsWho()");
