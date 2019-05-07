@@ -12,11 +12,9 @@ public class HelloLabel extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("Hello !");
-        primaryStage.setWidth(250);
-        primaryStage.setHeight(100);
         Label labelHello = new Label("Hello !");
         labelHello.setId("labelHello");
-        Scene scene = new Scene(new BorderPane(labelHello));
+        Scene scene = new Scene(new BorderPane(labelHello),250,100);
         primaryStage.setScene(scene);
         primaryStage.show();
     }

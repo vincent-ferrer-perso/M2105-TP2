@@ -17,7 +17,7 @@ import static org.testfx.util.NodeQueryUtils.hasText;
 
 public class TestHelloButton extends ApplicationTest {
 
-    @Ignore
+
     @Test
     public void should_initialize_stage_with_correct_title() {
         try {
@@ -27,7 +27,7 @@ public class TestHelloButton extends ApplicationTest {
         }
     }
 
-    @Ignore
+
     @Test
     public void should_initialize_stage_with_height_of_100() {
         try {
@@ -37,7 +37,7 @@ public class TestHelloButton extends ApplicationTest {
         }
     }
 
-    @Ignore
+
     @Test
     public void should_initialize_stage_with_width_of_250() {
         try {
@@ -47,14 +47,14 @@ public class TestHelloButton extends ApplicationTest {
         }
     }
 
-    @Ignore
+
     @Test
     public void should_initialize_button_with_text_hello() {
         // then:
         verifyThat("#buttonHello", hasText("Hello !"));
     }
 
-    @Ignore
+
     @Test
     public void should_initialize_stage_is_showing() {
         try {
@@ -64,7 +64,7 @@ public class TestHelloButton extends ApplicationTest {
         }
     }
 
-    @Ignore
+
     @Test
     public void should_initialize_stage_with_useless_button() {
         verifyThat("#buttonHello", (Button node) -> node.getOnAction() == null);

@@ -21,7 +21,7 @@ import static org.testfx.util.NodeQueryUtils.hasText;
 
 public class TestHelloBeautifulUsefulButton extends ApplicationTest {
 
-    @Ignore
+
     @Test
     public void should_initialize_stage_with_correct_title() {
         try {
@@ -31,7 +31,7 @@ public class TestHelloBeautifulUsefulButton extends ApplicationTest {
         }
     }
 
-    @Ignore
+
     @Test
     public void should_initialize_stage_with_height_of_250() {
         try {
@@ -41,7 +41,7 @@ public class TestHelloBeautifulUsefulButton extends ApplicationTest {
         }
     }
 
-    @Ignore
+
     @Test
     public void should_initialize_stage_with_width_of_250() {
         try {
@@ -51,14 +51,14 @@ public class TestHelloBeautifulUsefulButton extends ApplicationTest {
         }
     }
 
-    @Ignore
+
     @Test
     public void should_initialize_button_with_text_hello() {
         // then:
         verifyThat("#buttonHello", hasText("Hello !"));
     }
 
-    @Ignore
+
     @Test
     public void should_initialize_stage_with_a_graphic() {
         verifyThat("#buttonHello", (Button node) -> node.getGraphic() instanceof ImageView);
@@ -67,7 +67,7 @@ public class TestHelloBeautifulUsefulButton extends ApplicationTest {
         verifyThat("#buttonHello", (Button node) -> ((ImageView) node.getGraphic()).getImage().getWidth() == 150);
     }
 
-    @Ignore
+
     @Test
     public void should_button_click_show_useless_text() {
         PrintStream out = mock(PrintStream.class);
@@ -80,7 +80,7 @@ public class TestHelloBeautifulUsefulButton extends ApplicationTest {
         verify(out).println("Bouton actionné");
     }
 
-    @Ignore
+
     @Test
     public void should_initialize_stage_is_showing() {
         try {
