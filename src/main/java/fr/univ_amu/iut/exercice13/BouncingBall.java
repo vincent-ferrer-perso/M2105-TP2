@@ -19,6 +19,8 @@ import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import static javafx.scene.paint.Color.BLUE;
+
 public class BouncingBall extends Application {
 
     private Button startButton;
@@ -69,6 +71,8 @@ public class BouncingBall extends Application {
         transition.setAutoReverse(true);
         transition.setCycleCount(Animation.INDEFINITE);
         transition.setDuration(Duration.seconds(1));
+
+        circle.setFill(BLUE);
 
         pane.setPrefSize(400,450);
 
